@@ -42,5 +42,5 @@ app.get('/fence', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/fence.html'))
 })
 
- app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+//  app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
  

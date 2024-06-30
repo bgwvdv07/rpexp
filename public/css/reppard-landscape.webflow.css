@@ -1,3 +1,6 @@
+/*@import url(https://fonts.googleapis.com/css?family=Montserrat:400,700&display=swap);
+
+*/
 :root {
   --white: white;
   --sand: #c2b280;
@@ -17,6 +20,7 @@
 body {
   color: #1a1b1f;
   font-family: Montserrat, sans-serif;
+  font-display:"swap";
   font-size: 16px;
   font-weight: 400;
   line-height: 28px;
@@ -502,9 +506,9 @@ figcaption {
 }
 
 .work-image.cc-work-1 {
-  background-image: url('../images/deck_arbor1_ipprsm.png');
+  background-image: url('../images/arbor-in-oakland.webp');
   background-position: 0 0;
-  background-size: cover;
+  background-size: 500px 500px;
   box-shadow: 6px 2px 5px rgba(0, 0, 0, .2);
 }
 

@@ -6,7 +6,7 @@ const PORT = 3000;
 const router = express.Router();
 app.use(compression());
 
-app.use(express.static('public'));
+app.use(express.static(__dirname + '/public'));
 
 
 // app.get('/', (req, res) => {

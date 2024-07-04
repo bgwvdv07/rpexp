@@ -6,3 +6,7 @@
   from = "/api/*"
   status = 200
   to = "/.netlify/functions/api/:splat"
+[[redirects]]
+  from = "/blog"
+  to = "https://reppards-landscaping.sanity.studio/"
+  status = 301

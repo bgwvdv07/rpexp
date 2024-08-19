@@ -2,6 +2,7 @@ const compression = require('compression');
 const express = require('express');
 const path = require('path');
 const app = express();
+const serverless = require('serverless-http');
 const PORT = 3000;
 const router = express.Router();
 app.use(compression());
@@ -41,6 +42,10 @@ app.get('/deck-arbor', function (req, reply) {
 app.get('/fence', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/fence.html'))
 })
+
+module.exports.handler = serverless(app);
+
+
 
  //app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
  

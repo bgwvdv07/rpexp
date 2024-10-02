@@ -55,6 +55,7 @@ body {
   font-size: 14px;
   line-height: 20px;
   color: #333;
+  
 }
 img {
   max-width: 100%;
@@ -1827,3 +1828,4 @@ textarea.w-select {
   top: 0;
   left: 0;
 }
+

@@ -98,4 +98,10 @@ app.get('/fence', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/fence.html'))
 })
 
+app.get('/sitemap', function (req, reply) {
+    reply.sendFile(path.join(__dirname + '/public/sitemap.xml'))
+})
+
+
+
 module.exports.handler = serverless(app);

@@ -19,8 +19,8 @@ async function createAssessment({
   // TODO: Replace the token and reCAPTCHA action variables before running the sample.
   projectID = "reppards-1727970234841",
   recaptchaKey = "6Lcr3VYqAAAAAOjiv9f07W-kRQLLWJZXF1UBZgi2",
-  token = "action-token",
-  recaptchaAction = "action-name",
+  token = "6Lcr3VYqAAAAAOjiv9f07W-kRQLLWJZXF1UBZgi2",
+  recaptchaAction = "LOGIN",
 }) {
   // Create the reCAPTCHA client.
   // TODO: Cache the client generation code (recommended) or call client.close() before exiting the method.

@@ -104,8 +104,5 @@ app.get('/sitemap', function (req, reply) {
 
 
 
-//module.exports.handler = serverless(app);
+module.exports.handler = serverless(app);
 
-app.listen(PORT, () => {
-  console.log('app listening on port ${port}')
-})

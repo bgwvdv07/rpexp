@@ -8,4 +8,11 @@ $(document).ready(function () {
       })
     }
     )
+    function recaptchaCallback() {
+      const submitButton = document.getElementById("contact-us-submit-btn");
+      submitButton.removeAttribute("disabled");
+  }
+
+  // Define recaptchaCallback in the global scope.
+  window.recaptchaCallback = recaptchaCallback;
 })

@@ -1,4 +1,4 @@
-const compression = require('compression');
+/* const compression = require('compression');
 const express = require('express');
 const path = require('path');
 const app = express();
@@ -10,9 +10,7 @@ app.use(compression());
 app.use(express.static(__dirname + '/public'));
 
 
-// app.get('/', (req, res) => {
-//     res.sendFile( path.join( __dirname + "/public/index.html" ));
-// });
+
 
 
 
@@ -47,5 +45,5 @@ module.exports.handler = serverless(app);
 
 
 
- //app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
- 
+ app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
+  */

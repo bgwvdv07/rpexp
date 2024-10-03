@@ -68,7 +68,7 @@
   }
   .heading-jumbo {
     text-shadow: 3.7px 2px black !important;
-    font-size: 65px !important;
+    font-size: 35px !important;
     letter-spacing: 10px;
     line-height: 50px;
   }
@@ -173,9 +173,21 @@
    /*  max-width: 95% !important; */
     
   }
+  #stamp {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    align-content: space-around;
+    justify-content: center;
+    align-items: center;
+    margin-bottom: 80px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 
   .works-grid {
     display: flex !important;
+    margin-bottom: 15px;
   }
 
   li {
@@ -183,9 +195,10 @@
     font-size: 22px;
     letter-spacing: 7px;
     font-weight: 300;
-    line-height: 16px;
+    line-height: 20px;
     padding: 5px;
-    margin: 5px;
+    margin: 11px;
+    word-break: break-all;
   }
 
   .carrer-headline-wrap {
@@ -198,8 +211,44 @@
     padding: 10px;
   }
 
+  .contact-headline {
+    display: grid;
+    align-content: space-around;
+    justify-content: space-around;
+    align-items: end;
+    justify-items: center;
+  }
+  #contact {
+    display: grid;
+    
+  }
+  span, p {
+    margin-left: 10px;
+  }
+
   #grid {
     display: grid;
+  }
+  #button {
+    margin: 15px;
+    padding: 10px;
+    width: 50vh;
+    border-radius: 20px;
+  }
+  #button:hover {
+    background-color: lightgreen;
+    width: 70vh;
+  }
+  #button:active {
+    background: linear-gradient(45deg, red, orange, black);
+  }
+  #contactemail {
+    display: flex;
+
+  }
+  #contactphone {
+
+    display: flex;
   }
 </style>
 
@@ -265,8 +314,8 @@
         <div class="work-description">
           <ul>
             <li>GARDEN INSTALLATION</li>
-            <li>IRRIGATION, SPRINKLERS AND DRIP </li>
-            <li>PAVERS PATIO AND WALKWAY DRIVEWAY </li>
+            <li>IRRIGATION, SPRINKLERS & DRIP </li>
+            <li>PAVERS PATIO & WALKWAY DRIVEWAY </li>
             <li>DECKS AND ARBORS</li>
             <li>RETAINING WALLS </li>
             <li>DESIGN </li>
@@ -311,6 +360,9 @@
       
       </div> 
     </div>
+    <div class="container" id="stamp">
+      <img src="images/bookdesign.png" loading="lazy"/>
+    </div>
 
 
     <div class="container">
@@ -322,7 +374,7 @@
         <div id="w-node-dff26f68-5731-3efa-d3dd-8f65c72d8fc9-e5c48a67" class="work-position-wrap">
           <div class="position-name-text">John Reppard</div>
           <div class="paragraph-light cc-position-name">Landscaping contractor #1022906</div>
-          <div class="paragraph-tiny cc-paragraph-tiny-light">30 years professional experience <br> Merrit college horticulture 2+ years</div> 
+          <div class="paragraph-light cc-paragraph-light">30 years professional experience <br> Merrit college horticulture 2+ years</div> 
         </div>
       </div>
     </div>
@@ -429,8 +481,16 @@
       <div class="contact" id="contact">
         <div class="contact-headline">
           <h5>Got a job?</h5>
-       <h3>Call Now!</h3>
-       <button>510.239.8458</button>
+       
+       <button id="button"><a href="tel:5102398458"><h3>Call Now!</h3></a></button>
+       <div id="contactemail">
+        <span>Email:</span>
+        <p>Johnreppard@yahoo.com</p>
+      </div>
+      <div id="contactphone">
+        <span>Phone:</span>
+        <p>(510) 239-8458</p>
+      </div>
         </div>
         <div class="contact-form-wrap">
           <div class="w-form">

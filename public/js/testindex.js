@@ -6,6 +6,7 @@ const serverless = require('serverless-http');
 const PORT = 3000;
 const router = express.Router();
 
+  
 
 
 app.use(compression());
@@ -20,7 +21,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 router.get('/', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '../public/index.html'));
+    reply.sendFile(path.join(__dirname + '/public/index.html'));
 })
 
 app.get('/about', function (req, reply) {
@@ -49,9 +50,8 @@ app.get('/sitemap', function (req, reply) {
 
 
 
-module.exports.handler = serverless(app);
+//module.exports.handler = serverless(app);
 
-/*  app.listen(PORT, () => {
-  console.log('port 3000')
+app.listen(PORT, () => {
+  console.log('app listening on port ${port}')
 })
-  */

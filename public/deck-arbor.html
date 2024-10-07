@@ -170,7 +170,6 @@
 
     #contact {
       display: grid;
-      justify-content: center;
       justify-items: center;
       
     }
@@ -179,11 +178,7 @@
     
   }
 
-  #contact {
-      margin: auto;
-      display: flex;
-      flex-direction: column;
-  }
+ 
 
    
    .contact-form-wrap {
@@ -226,11 +221,14 @@
   .grid-item {
     left: auto !important;
    float: left; 
-   width: 100%;
     border: 8px solid black;
     border-color: hsla(0%, 0%, 0%, 0%);
     border-radius: 5px;
     margin: 15px;
+  }
+  section .grid-item {
+    display: grid;
+    justify-content:center;
   }
  /*  .grid-item--width2 {
     width: 40%;
@@ -312,6 +310,7 @@
   }
   #contact {
     display: grid;
+    justify-items: center;;
     
   }
   span, p {
@@ -326,7 +325,7 @@
     padding: 10px;
     width: 300px;
     border-radius: 20px;
-    background-color: #A50024;
+    background-color: lightgreen;
   }
   #button:hover {
     background-color: #A50024;
@@ -353,6 +352,34 @@
   }
   #grid-item > img:nth-child(6) {
     margin-bottom: 0;
+  }
+  div.email-section {
+    display: flex;
+    justify-content: space-evenly;
+    align-content: space-between;
+    flex-wrap: wrap;
+    flex-direction: row;
+    align-items: baseline;
+  }
+  div.email-section:first-child {
+    margin: 15px;
+    padding: 20px;
+  }
+  div.email-section:nth-child(1) {
+    margin: 15px;
+    padding: 20px;
+  }
+  div.email-section:nth(2) {
+    margin: 15px;
+    padding: 20px;
+  }
+  div.email-section:nth-child(3) {
+    margin: 15px;
+    padding: 20px;
+  }
+  div.email-section:last-child {
+    margin: 15px;
+    padding: 20px;
   }
   </style>
 
@@ -402,12 +429,17 @@
     </div>
   </div>
 
-  <div class="section" style="display: flex;">
+  <div class="section">
     <div class="container">
-      <div class="email-section" style="margin-left: auto; margin-right: auto;">
+      <div class="email-section">
         <h3>Want to work together?</h3>
         <p>If you like what you see and want to work together, get in touch!</p>
+        <div id="contactphone">
+          
+          <p>(510) 239-8458</p>
+        </div>
         <a href="mailto:johnreppard@yahoo.com?subject=You&#x27;ve%20got%20mail!" class="email-link">johnreppard@yahoo.com</a>
+        <button id="button"><a href="tel:5102398458"><h3>Call Now!</h3></a></button>
       </div>
     </div>
   </div>

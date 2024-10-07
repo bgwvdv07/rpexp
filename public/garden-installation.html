@@ -56,7 +56,7 @@
     border: 8px solid black;
     border-color: hsla(0%, 0%, 0%, 0%);
     border-radius: 5px;
-   /*  margin: 15px; */
+     margin: 15px; 
   }
   .grid-item:hover {
     opacity: .6;
@@ -111,7 +111,7 @@
     padding: 10px;
     width: 300px;
     border-radius: 20px;
-    background-color: #A50024;
+    background-color: lightgreen;
   }
   #button:hover {
     background-color: #A50024;
@@ -134,8 +134,8 @@
   }
   #contact {
       margin: auto;
-      display: flex;
-      flex-direction: column;
+      display: grid;
+      justify-items: center;
   }
 
    
@@ -294,6 +294,26 @@
     flex-direction: row;
     align-items: baseline;
   }
+  div.email-section:first-child {
+    margin: 15px;
+    padding: 20px;
+  }
+  div.email-section:nth-child(1) {
+    margin: 15px;
+    padding: 20px;
+  }
+  div.email-section:nth(2) {
+    margin: 15px;
+    padding: 20px;
+  }
+  div.email-section:nth-child(3) {
+    margin: 15px;
+    padding: 20px;
+  }
+  div.email-section:last-child {
+    margin: 15px;
+    padding: 20px;
+  }
   </style>
 
   
@@ -353,6 +373,10 @@
       <div class="email-section">
         <h3>Want to work together?</h3>
         <p>If you like what you see and want to work together, get in touch!</p>
+        <div id="contactphone">
+          
+          <p>(510) 239-8458</p>
+        </div>
         <a href="mailto:johnreppard@yahoo.com?subject=You&#x27;ve%20got%20mail!" class="email-link">johnreppard@yahoo.com</a>
         <button id="button"><a href="tel:5102398458"><h3>Call Now!</h3></a></button>
       </div>
@@ -441,7 +465,7 @@
     const imageElement = document.getElementById(id);
     const altText = imageElement.getAttribute('alt');
     const h5Element = document.createElement('span');
-    console.log(altText);
+    
     //if hover above imageElement then add element p with altText as value
       let isHovered = false;
       
@@ -449,7 +473,7 @@
         
       imageElement.addEventListener('mouseenter', () => {
         isHovered = true;
-        console.log(imageElement.parentElement);
+        
         
         imageElement.parentElement.appendChild(h5Element);
         //add styles to p tag
@@ -462,10 +486,10 @@
         h5Element.style.width = '500px';
         h5Element.style.fontSize = '20px';
         h5Element.style.fontWeight = '500';
-        h5Element.style.color = '#000';
+        h5Element.style.color = 'yellow';
         h5Element.style.backgroundColor = '#fff';
         h5Element.innerText = altText;
-        h5Element.style.textAlign = center;
+        h5Element.style.textAlign = 'center';
         imageElement.parentElement.style.maxhHeight = imageElement.style.height;
         imageElement.parentElement.style.overflowY = 'hidden';
         imageElement.style.overflowY = 'hidden';

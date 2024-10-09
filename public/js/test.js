@@ -32,6 +32,10 @@ app.get('/garden-installation', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/garden-installation.html'))
 })
 
+app.get('/404', function (req, reply) {
+    reply.sendFile(path.join(__dirname + '/public/404.html'))
+})
+
 app.get('/pavers', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/pavers.html'))
 })

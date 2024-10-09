@@ -47,6 +47,10 @@ app.get('/sitemap', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/sitemap.xml'))
 })
 
+app.get('/404', function (req, reply) {
+    reply.sendFile(path.join(__dirname + '/public/404.html'))
+})
+
 
 
 module.exports.handler = serverless(app);

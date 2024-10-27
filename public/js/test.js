@@ -5,14 +5,15 @@ const app = express();
 const serverless = require('serverless-http');
 const PORT = 3000;
 const router = express.Router();
+
+  
+
+
 app.use(compression());
 
 app.use(express.static(__dirname + '/public'));
 
 
-// app.get('/', (req, res) => {
-//     res.sendFile( path.join( __dirname + "/public/index.html" ));
-// });
 
 
 
@@ -31,6 +32,10 @@ app.get('/garden-installation', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/garden-installation.html'))
 })
 
+app.get('/404', function (req, reply) {
+    reply.sendFile(path.join(__dirname + '/public/404.html'))
+})
+
 app.get('/pavers', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/pavers.html'))
 })
@@ -43,9 +48,14 @@ app.get('/fence', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/fence.html'))
 })
 
-module.exports.handler = serverless(app);
+app.get('/sitemap', function (req, reply) {
+    reply.sendFile(path.join(__dirname + '/public/sitemap.xml'))
+})
 
 
 
- //app.listen(PORT, () => console.log(`Server listening on port: ${PORT}`));
- 
+//module.exports.handler = serverless(app);
+
+app.listen(PORT, () => {
+  console.log('app listening on port ${port}')
+})

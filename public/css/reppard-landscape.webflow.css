@@ -399,12 +399,13 @@ figcaption {
 }
 
 .navigation {
-  background-color: rgba(0, 0, 0, 0);
+  
   align-items: center;
   padding: 30px 50px;
   font-family: Work Sans, sans-serif;
   font-weight: 400;
   display: flex;
+  flex-direction: column;
 }
 
 .logo-image {
@@ -428,6 +429,7 @@ figcaption {
   margin-top: 100px;
   margin-bottom: 140px;
   display: flex;
+  width:50%;
 }
 
 .name-text {
@@ -905,6 +907,7 @@ figcaption {
   font-weight: 400;
   display: block;
   position: static;
+  text-shadow: 5px 5px floralwhite;
 }
 
 .headingrep {
@@ -946,6 +949,7 @@ figcaption {
   outline-offset: 0px;
   outline: 3px #1a1b1f;
   box-shadow: 0 2px 5px rgba(0, 0, 0, .2);
+  
 }
 
 @media screen and (max-width: 991px) {
@@ -990,7 +994,7 @@ figcaption {
   }
 
   .navigation-items {
-    background-color: #fff;
+    background-color: floralwhite !important;
   }
 
   .navigation {
@@ -1017,8 +1021,8 @@ figcaption {
 
   .works-grid {
     flex-direction: column;
-    align-items: stretch;
-    display: flex;
+   /*  align-items: center;
+    display: flex; */
   }
 
   .carrer-headline-wrap {

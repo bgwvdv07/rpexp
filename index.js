@@ -12,10 +12,38 @@ app.use(compression());
 
 app.use(express.static(__dirname + '/public'));
 
+var smtpTransport = nodemailer.createTransport(smtpTransport({
+    service: 'Gmail',
+    auth: {
+     user: process.env.EMAIL_USER,
+     pass: process.env.EMAIL_PASS,
+     type: 'OAuth2',
+     clientId: '478240378195-59n27i6flr3ajr7hnhm09p745kglhqro.apps.googleusercontent.com',
+     clientSecret: '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',
+     refreshToken: '1//04u9o399K1yQMCgYIARAAGAQSNwF-L9IrYP_B0s2gJec96rX0UqnDTUGju7rqIAfmg6UlWOe9WhY00sVr34UwqzAJIABQO71rLa0'
+     },
+
+    
+}));
 
 
 
-app.use('/api/send-email', require('/public/js/api/send-email.js'))
+
+app.post('/send-email', function(req, res) {
+    var mailOptions = {
+        from: '"David" <davidaragon97@gmail.com>',
+        to: "johnreppard@yahoo.com",
+        subject: 'Request ',
+        text: req.body.to
+    };
+    smtpTransport.sendMail(mailOptions, function(error, info) {
+        if (error) {
+            return console.log(error);
+        }
+        console.log('message sent: ' + info.response);
+    });
+    res.redirect("/");
+});
 
 
 

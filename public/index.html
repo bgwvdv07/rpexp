@@ -1353,34 +1353,41 @@
    <script defer src="js/webflow.min.js" type="text/javascript"> </script> 
    <script src="https://static.elfsight.com/platform/platform.js" async></script>
 
-   <!-- <script type="text/javascript">
+    <script type="text/javascript">
+      
+
       document.getElementsByTagName(form).addEventListener('submit', function(event) {
+
+        var name = $('#name').val();
+      var email = $('#email').val();
+      var message = $('#message').val();
+
+      var message_info = {
+        "name": name,
+        "email": email,
+        "message": message
+      };
+
         event.preventDefault();
 
         const form = event.target;
         const formData = new FormData(form);
 
-        fetch('/api/send-email', {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
-        .done(response => {
-          if(response) {
-              alert('We will get back to you shortly');
-              form.reset();
-          } else {
-            alert('There was a problem with your submission.');
-          }
-      })
-      .catch(error => {
-        alert('Error!');
-      });
+        .ajax({
+          url: '/send-email',
+          method: "POST",
+          contentType: "application/json",
+          data: JSON.stringify({
+            name, email, message
+          }),
+          success: function(response) {
+            alert("thank you for your response");
+          },
+
         });
+        
       
-   </script> -->
+   </script> 
 
   <script type="text/javascript">
     

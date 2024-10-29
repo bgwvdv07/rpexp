@@ -5,6 +5,8 @@ const app = express();
 const serverless = require('serverless-http');
 const PORT = 3000;
 const router = express.Router();
+app.use(bodyParser.urlencoded({ extended: false }));
+app.use(bodyParser.json());
 
 
 
@@ -30,6 +32,11 @@ var smtpTransport = nodemailer.createTransport(smtpTransport({
 
 
 app.post('/send-email', function(req, res) {
+
+    reply.sendFile(path.join(__dirname + '/public/send-email.html'));
+
+    
+
     var mailOptions = {
         from: '"David" <davidaragon97@gmail.com>',
         to: "johnreppard@yahoo.com",
@@ -79,9 +86,6 @@ app.get('/404', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/404.html'))
 })
 
-app.get('/success', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/success.html'))
-})
 
 
 

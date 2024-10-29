@@ -1367,8 +1367,8 @@
             'Accept': 'application/json'
           }
         })
-        .then(response => {
-          if(response.ok) {
+        .done(response => {
+          if(response) {
               alert('We will get back to you shortly');
               form.reset();
           } else {

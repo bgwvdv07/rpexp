@@ -16,6 +16,7 @@ app.use(express.static(__dirname + '/public'));
 
 var smtpTransport = nodemailer.createTransport(smtpTransport({
     service: 'Gmail',
+    host: 'mail.google.com',
     auth: {
      user: process.env.EMAIL_USER,
      pass: process.env.EMAIL_PASS,
@@ -35,14 +36,27 @@ app.post('/send-email', function(req, res) {
 
     reply.sendFile(path.join(__dirname + '/public/send-email.html'));
 
+    const output = `
+    <p>You have a new contact request</p>
+    <h3>contact details</h3>
+    <ul>
+      <li>Name: ${req.body.name}</li>
+      <li>Email: ${req.body.email}</li>
+    </ul>
+    <h3>Message</h3>
+    <p>${req.body.message}</p>
+  `;
+
+
     
 
     var mailOptions = {
         from: '"David" <davidaragon97@gmail.com>',
         to: "johnreppard@yahoo.com",
         subject: 'Request ',
-        text: req.body.to
+        html: output
     };
+    
     smtpTransport.sendMail(mailOptions, function(error, info) {
         if (error) {
             return console.log(error);

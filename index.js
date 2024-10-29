@@ -15,7 +15,7 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-app.use('/api/send-email', require('/public/js/send-email.js'))
+app.use('/api/send-email', require('/public/js/api/send-email.js'))
 
 
 

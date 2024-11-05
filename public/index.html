@@ -17,7 +17,8 @@
   <meta content="Webflow" name="generator">
    <link href="css/normalize.min.css" rel="stylesheet"> 
   <link rel="stylesheet" href="css/webflow.min.css" media="print" onload="this.media='all'">
-
+  <link href="https://reppardslandscaping.com/" rel="canonical">
+  <link href="https://reppardslandscaping.com" rel="home">
    <link href="css/reppard-landscape.webflow.min.css" rel="stylesheet">
   <noscript><link rel="stylesheet" href="css/reppard-landscape.webflow.min.css"></noscript> 
   <link href="https://fonts.googleapis.com" rel="preconnect">
@@ -1367,8 +1368,8 @@
             'Accept': 'application/json'
           }
         })
-        .then(response => {
-          if(response.ok) {
+        .done(response => {
+          if(response) {
               alert('We will get back to you shortly');
               form.reset();
           } else {

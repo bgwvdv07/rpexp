@@ -96,7 +96,7 @@ app.get('/sitemap.xml', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/sitemap.xml'))
 })
 
-app.get('/404', function (req, reply) {
+app.get('*', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/404.html'))
 })
 

@@ -92,12 +92,16 @@ app.get('/fence', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/fence.html'))
 })
 
-app.get('/sitemap', function (req, reply) {
+app.get('/sitemap.xml', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/sitemap.xml'))
 })
 
 app.get('/404', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/404.html'))
+})
+
+app.get('/robots.txt', function(req, reply) {
+    reply.sendFile(path.join(__dirname + '/public/robots.txt'))
 })
 
 <<<<<<< HEAD

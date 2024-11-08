@@ -2,7 +2,7 @@
 <html data-wf-page="65f14743b89cfcd9e5c48a67" data-wf-site="65f14742b89cfcd9e5c48a1e" lang="en">
 <head>
   <meta charset="utf-8">
-  <title>Reppard&#x27;s Landscaping - Local Landscaper in Oakland & Berkeley</title>
+  <title>Reppard&#x27;s Landscaping - The Local Landscaper for Oakland & Berkeley</title>
   <meta content="Local landscaper in Oakland and Berkeley delivering quality renovation and landscape construction including garden installation, pavers, deck, arbor, fence and irrigation." name="description">
   <meta content="Reppard&#x27;s Landscaping - Local Landscaper serving Oakland and Berkeley" property="og:title">
   <meta content="Local landscaper in Oakland and Berkeley delivering quality renovation and landscape construction including garden installation, pavers, deck, arbor, fence and irrigation." property="og:description">
@@ -15,6 +15,7 @@
    <meta property="og:image:type" content="image/jpeg" />
   <meta content="width=device-width, initial-scale=1" name="viewport">
   <meta content="Webflow" name="generator">
+  <meta http-equiv="Content-Security-Policy" content="upgrade-insecure-requests"> 
    <link href="css/normalize.min.css" rel="stylesheet"> 
   <link rel="stylesheet" href="css/webflow.min.css" media="print" onload="this.media='all'">
   <link href="https://reppardslandscaping.com/" rel="canonical">
@@ -108,6 +109,11 @@
 
   .navigation-item {
     padding: 5px;
+    height:auto; 
+    display: flex;
+     flex-direction: column;
+     align-items: center; 
+     justify-content: center;
   }
   
   .intro-wrap {
@@ -190,6 +196,8 @@
     align-items: center;
     justify-content: center;
     letter-spacing: 3px;
+    line-height: 60px;
+    text-align: center;
   }
 }
 
@@ -215,6 +223,8 @@
   #heading {
         font-size: 45px;
         letter-spacing: 2px;
+        line-height: 60px; 
+        text-align: center;
     }
 
     .navigation {
@@ -424,10 +434,10 @@
       <div  class="navigation w-nav" id="header">
         <div class="div-block-4">
           
-          <a href="/" aria-current="page" class="navigation-item w-nav-link w--current logo-link" style="height:auto; display: flex; flex-direction: column;align-items: center; justify-content: center;" >
+          <a href="/" aria-current="page" class="navigation-item w-nav-link w--current logo-link" >
             
           
-          <h1 id="heading" style="line-height: 60px; text-align: center;">Reppard's Landscaping</h1>
+          <h1 id="heading">Reppard's Landscaping</h1>
           <img width=150 height=150 tabindex="1" src="https://res.cloudinary.com/bay-area-rides/image/upload/v1727550079/reppardsimages/images/logojr-removebg-preview_bkzx9h.png"/>
           
         </a>
@@ -1308,7 +1318,7 @@
         </div>
             <div class="contact-form-wrap">
               <div class="w-form">
-                <form id="wf-form-Email-Form" name="reppards-contact-form" action="/send-email" data-name="Email Form" method="post" class="contact-form" data-wf-page-id="65f14743b89cfcd9e5c48a67" data-wf-element-id="d783a17e-0b35-a13a-0448-a852d0df4a30">
+                <form id="wf-form-Email-Form" name="reppards-contact-form" action="/contact" method="POST" data-name="Email Form" class="contact-form" data-wf-page-id="65f14743b89cfcd9e5c48a67" data-wf-element-id="d783a17e-0b35-a13a-0448-a852d0df4a30">
                   <div class="w-layout-grid contact-form-grid">
                     <div id="w-node-d783a17e-0b35-a13a-0448-a852d0df4a32-d0df4a24"><label for="Name-3">Name</label><input class="text-field w-input" maxlength="256" name="Name" data-name="Name" placeholder="Joe Doe" type="text" id="Name" required></div>
                     <div id="w-node-d783a17e-0b35-a13a-0448-a852d0df4a36-d0df4a24"><label for="Email-3">Email Address</label><input class="text-field w-input" maxlength="256" name="Email" data-name="Email" placeholder="name@domain.com" type="email" id="Email" required></div>
@@ -1352,7 +1362,7 @@
 </div> 
 
   
-  <script src="js/jquery-3.7.1.slim.min.js" type="text/javascript"></script>
+  <script src="js/jquery-3.7.1.min.js" type="text/javascript"></script>
   <script async src="js/imagesloaded.pkgd.min.js" type="text/javascript"></script>
   <script async src="js/masonry.pkgd.min.js" type="text/javascript"></script>
   <script src="js/custom-js.js" type="text/javascript"></script>
@@ -1361,58 +1371,28 @@
 
     <script type="text/javascript">
       
+      document.getElementById('#wf-form-Email-Form').addEventListener('submit', function(event) {
 
-      document.getElementsByTagName(form).addEventListener('submit', function(event) {
 
-        var name = $('#name').val();
-      var email = $('#email').val();
-      var message = $('#message').val();
 
-      var message_info = {
-        "name": name,
-        "email": email,
-        "message": message
-      };
+        e.preventDefault();
 
-        event.preventDefault();
+        var formData = new FormData(this);
 
-        const form = event.target;
-        const formData = new FormData(form);
+         fetch('/contact', {
+          method: POST,
+          body: formData
+         })
+           .then((response) => response.json())
+           .then((data) => console.log('Success:', data))
+           .catch((error) => console.error('Error:', error));
 
-<<<<<<< HEAD
-        fetch(form.action, {
-          method: 'POST',
-          body: formData,
-          headers: {
-            'Accept': 'application/json'
-          }
-        })
-        .done(response => {
-          if(response) {
-              alert('We will get back to you shortly');
-              form.reset();
-          } else {
-            alert('There was a problem with your submission.');
-          }
-      })
-      .catch(error => {
-        alert('Error!');
-      });
-=======
-        .ajax({
-          url: '/send-email',
-          method: "POST",
-          contentType: "application/json",
-          data: JSON.stringify({
-            name, email, message
-          }),
-          success: function(response) {
-            alert("thank you for your response");
-          },
 
->>>>>>> 20e6c1e3a139a29d699212ed79ee0785c410c436
-        });
-        
+            });
+
+  
+      
+     
       
    </script> 
 
@@ -1420,8 +1400,8 @@
     
     
     function getSelektors() {
-      const form = document.getElementsByTagName("form");
-      form.style.display = "grid";
+      const fo = document.getElementsByClassName("contact-form");
+      fo.style.display = "grid";
       const btn = document.getElementsByClassName('contact-us-submit-btn');
       btn.style.margin = 'auto';
       let t = document.querySelectorAll('img');

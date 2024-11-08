@@ -5,72 +5,93 @@ const app = express();
 const serverless = require('serverless-http');
 const PORT = 3000;
 const router = express.Router();
-app.use(bodyParser.urlencoded({ extended: false }));
-app.use(bodyParser.json());
+const cors = require('cors');
+const nodemailer = require('nodemailer');
+const bodyParser = require('body-parser');
+var multer = require('multer');
+var upload = multer();
 
 
+
+require('dotenv').config();
 
 app.use(compression());
-
+app.use(cors());
+app.use(bodyParser.urlencoded({ extended: true }));
+app.use(bodyParser.json());
+app.use(upload.array()); 
 app.use(express.static(__dirname + '/public'));
 
-var smtpTransport = nodemailer.createTransport(smtpTransport({
+
+
+
+
+
+
+
+var smtpTransport = nodemailer.createTransport({
     service: 'Gmail',
-    host: 'mail.google.com',
+    host: 'smtp.gmail.com',
+    port: 587,
     auth: {
      user: process.env.EMAIL_USER,
      pass: process.env.EMAIL_PASS,
      type: 'OAuth2',
-     clientId: '478240378195-59n27i6flr3ajr7hnhm09p745kglhqro.apps.googleusercontent.com',
-     clientSecret: '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',
-     refreshToken: '1//04u9o399K1yQMCgYIARAAGAQSNwF-L9IrYP_B0s2gJec96rX0UqnDTUGju7rqIAfmg6UlWOe9WhY00sVr34UwqzAJIABQO71rLa0'
+     clientId: '478240378195-p6v56co0h3i0rgb3lfjqsvgctfhioopo.apps.googleusercontent.com',
+     clientSecret: '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',
+     refreshToken: '1//04oQW_qZAscB7CgYIARAAGAQSNwF-L9IrsLz_V2ME-toh7QjqShYiAXwNwM3rb8L00qfy6BXxBk-_LgtnO5N8b7d8Ntd7PcHa-mM'
      },
 
     
-}));
+});
 
 
 
 
-app.post('/send-email', function(req, res) {
-
-    reply.sendFile(path.join(__dirname + '/public/send-email.html'));
-
-    const output = `
-    <p>You have a new contact request</p>
-    <h3>contact details</h3>
-    <ul>
-      <li>Name: ${req.body.name}</li>
-      <li>Email: ${req.body.email}</li>
-    </ul>
-    <h3>Message</h3>
-    <p>${req.body.message}</p>
-  `;
+app.post('/contact', upload.none(), function(req, res) {
 
 
+
+    const {body} = req
     
+    let currentTime = new Date();
 
-    var mailOptions = {
-        from: '"David" <davidaragon97@gmail.com>',
+
+
+    let mailOptions = {
+        from: 'davidaragon97@gmail.com',
         to: "johnreppard@yahoo.com",
+        bcc: "davidaragon97@gmail.com",
         subject: 'Request ',
-        html: output
-    };
+        text: `${body.Name} from ${body.Email}
+         on ${currentTime}
+          has stated the following: 
+          ${body.Message}` ,
+  };
+
+
     
-    smtpTransport.sendMail(mailOptions, function(error, info) {
+    
+    smtpTransport.sendMail(mailOptions, (error, info) => {
         if (error) {
-            return console.log(error);
-        }
-        console.log('message sent: ' + info.response);
-    });
-    res.redirect("/");
+            console.log(error);
+            return res.status(500).send('Error sending email.');
+          } else {
+            console.log('Email sent: ' + info.response);
+           /*return res.status(200).send('Email sent successfully!');*/
+           return res.status(200).redirect("/contact");
+          }
+        });
+    /**/
 });
 
 
 
 router.get('/', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '../public/index.html'));
+ 
+    reply.sendFile(path.join(__dirname + '/public/index.html'));
 })
+
 
 app.get('/about', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/about.html'))
@@ -104,12 +125,9 @@ app.get('/robots.txt', function(req, reply) {
     reply.sendFile(path.join(__dirname + '/public/robots.txt'))
 })
 
-<<<<<<< HEAD
-app.get('/success', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/success.html'))
+app.get('/contact', function (req, reply) {
+    reply.sendFile(path.join(__dirname + '/public/contact.html'))
 })
-=======
->>>>>>> 20e6c1e3a139a29d699212ed79ee0785c410c436
 
 
 

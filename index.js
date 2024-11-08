@@ -129,7 +129,12 @@ app.get('/contact', function (req, reply) {
     reply.sendFile(path.join(__dirname + '/public/contact.html'))
 })
 
-
+app.get('/privacy-policy', function (req, reply) {
+    res.sendFile('/public/privacy-policy.html', {root: __dirname })
+})
+app.get('/termsofservice', function (req, reply) {
+    res.sendFile('/public/termsofservice.html', {root: __dirname })
+})
 
 module.exports.handler = serverless(app);
 

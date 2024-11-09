@@ -1,8 +1,8 @@
 {
-  "name": "reppardslandscaping.com",
+  "name": "reppard's_landscaping_home_page",
   "version": "1.0.0",
-  "description": "landing page",
-  "main": "Netlify/functions/app.js",
+  "description": "express driven landing page",
+  "main": "index.js",
   "engines": {
     "node": ">=16.17.1"
   },

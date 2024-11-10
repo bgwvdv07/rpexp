@@ -48,7 +48,7 @@ var smtpTransport = nodemailer.createTransport({
 
 
 
-app.post('/contact', upload.none(), function(req, res) {
+app.post('/submission', upload.none(), function(req, res) {
 
 
 
@@ -139,62 +139,63 @@ app.post('/contact', upload.none(), function(req, res) {
 
 
 
-router.get('/', function (req, reply) {
+router.get('/', function (req, res) {
  
-    reply.sendFile(path.join(__dirname + '/public/index.html'));
+    res.sendFile(path.join(__dirname, 'public', 'index.html'));
+})
+
+router.get('/contactus', function (req, res) {
+  res.sendFile(path.join(__dirname, 'public', 'contact.html'))
+})
+
+app.get('/about', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'about.html'))
+})
+
+app.get('/garden-installation', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'garden-installation.html'))
+})
+
+app.get('/pavers', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'pavers.html'))
+})
+
+app.get('/deck-arbor', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public','deck-arbor.html'))
+})
+
+app.get('/fence', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public','fence.html'))
+})
+
+app.get('/sitemap.xml', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'))
+})
+
+app.get('*', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public','404.html'))
+})
+
+app.get('/robots.txt', function(req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'robots.txt'))
 })
 
 
-app.get('/about', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/about.html'))
+app.get('/submission', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'submission.html'))
 })
 
-app.get('/garden-installation', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/garden-installation.html'))
-})
-
-app.get('/pavers', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/pavers.html'))
-})
-
-app.get('/deck-arbor', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/deck-arbor.html'))
-})
-
-app.get('/fence', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/fence.html'))
-})
-
-app.get('/sitemap.xml', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/sitemap.xml'))
-})
-
-app.get('*', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/404.html'))
-})
-
-app.get('/robots.txt', function(req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/robots.txt'))
-})
-
-app.get('/contact', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/contact.html'))
-})
-
-app.get('submission', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/submission.html'))
-})
-
-app.get('/privacy-policy', function (req, reply) {
+app.get('/privacy-policy', function (req, res) {
     res.sendFile('/public/privacy-policy.html', {root: __dirname })
 })
-app.get('/termsofservice', function (req, reply) {
+app.get('/termsofservice', function (req, res) {
     res.sendFile('/public/termsofservice.html', {root: __dirname })
 })
 
+
 module.exports.handler = serverless(app);
 
- app.listen(PORT, () => {
+ /*app.listen(PORT, () => {
   console.log('port 3000')
-})
+})*/
   

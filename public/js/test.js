@@ -20,36 +20,36 @@ app.use(express.static(__dirname + '/public'));
 
 
 
-router.get('/', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/index.html'));
+router.get('/', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/index.html'));
 })
 
-app.get('/about', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/about.html'))
+app.get('/about', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/about.html'))
 })
 
-app.get('/garden-installation', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/garden-installation.html'))
+app.get('/garden-installation', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/garden-installation.html'))
 })
 
-app.get('/404', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/404.html'))
+app.get('/404', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/404.html'))
 })
 
-app.get('/pavers', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/pavers.html'))
+app.get('/pavers', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/pavers.html'))
 })
 
-app.get('/deck-arbor', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/deck-arbor.html'))
+app.get('/deck-arbor', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/deck-arbor.html'))
 })
 
-app.get('/fence', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/fence.html'))
+app.get('/fence', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/fence.html'))
 })
 
-app.get('/sitemap', function (req, reply) {
-    reply.sendFile(path.join(__dirname + '/public/sitemap.xml'))
+app.get('/sitemap', function (req, res) {
+    res.sendFile(path.join(__dirname + '/public/sitemap.xml'))
 })
 
 

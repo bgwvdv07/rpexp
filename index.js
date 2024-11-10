@@ -20,7 +20,9 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(upload.array()); 
-app.use(express.static(__dirname + '/public'));
+app.use(express.static(__dirname + '/public', {
+  extensions: ['html']
+}));
 
 
 
@@ -148,35 +150,35 @@ app.get('/contact', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'contact.html'))
 })
 
-app.get('/about', function (req, res) {
+router.get('/about', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'about.html'))
 })
 
-app.get('/garden-installation', function (req, res) {
+router.get('/garden-installation', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'garden-installation.html'))
 })
 
-app.get('/pavers', function (req, res) {
+router.get('/pavers', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'pavers.html'))
 })
 
-app.get('/deck-arbor', function (req, res) {
+router.get('/deck-arbor', function (req, res) {
     res.sendFile(path.join(__dirname, 'public','deck-arbor.html'))
 })
 
-app.get('/fence', function (req, res) {
+router.get('/fence', function (req, res) {
     res.sendFile(path.join(__dirname, 'public','fence.html'))
 })
 
-app.get('/sitemap.xml', function (req, res) {
+router.get('/sitemap.xml', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'))
 })
 
-app.get('*', function (req, res) {
+router.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'public','404.html'))
 })
 
-app.get('/robots.txt', function(req, res) {
+router.get('/robots.txt', function(req, res) {
     res.sendFile(path.join(__dirname, 'public', 'robots.txt'))
 })
 

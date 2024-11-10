@@ -48,7 +48,7 @@ var smtpTransport = nodemailer.createTransport({
 
 
 
-app.post('/submission', upload.none(), function(req, res) {
+app.post('/contact', upload.none(), function(req, res) {
 
 
 
@@ -144,7 +144,7 @@ router.get('/', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
 
-router.get('/contactus', function (req, res) {
+app.get('/contact', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'contact.html'))
 })
 

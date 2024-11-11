@@ -24,11 +24,67 @@ app.use(express.static(__dirname + '/public', {
   extensions: ['html']
 }));
 
+app.use((req, res, next) => {
+  if (req.url.endsWith('/about')) {
+    req.url = req.url + 'about.html';
+  } else if (!path.extname(req.url)) {
+    rq.url = req.url + '.html';
+  }
+  next()
+});
 
+app.use((req, res, next) => {
+  if (req.url.endsWith('/garden-installation')) {
+    req.url = req.url + 'garden-installation.html';
+  } else if (!path.extname(req.url)) {
+    rq.url = req.url + '.html';
+  }
+  next()
+});
 
+app.use((req, res, next) => {
+  if (req.url.endsWith('/deck-arbor')) {
+    req.url = req.url + 'deck-arbor.html';
+  } else if (!path.extname(req.url)) {
+    rq.url = req.url + '.html';
+  }
+  next()
+});
 
+app.use((req, res, next) => {
+  if (req.url.endsWith('/fence')) {
+    req.url = req.url + 'fence.html';
+  } else if (!path.extname(req.url)) {
+    rq.url = req.url + '.html';
+  }
+  next()
+});
 
+app.use((req, res, next) => {
+  if (req.url.endsWith('/pavers')) {
+    req.url = req.url + 'pavers.html';
+  } else if (!path.extname(req.url)) {
+    rq.url = req.url + '.html';
+  }
+  next()
+});
+app.use((req, res, next) => {
+  if (req.url.endsWith('/404')) {
+    req.url = req.url + '404.html';
+  } else if (!path.extname(req.url)) {
+    rq.url = req.url + '.html';
+  }
+  next()
+});
 
+app.use((req, res, next) => {
+  if (req.url.endsWith('/contact')) {
+    req.url = req.url + 'contact.html';
+  } else if (!path.extname(req.url)) {
+    rq.url = req.url + '.html';
+  }
+  next()
+});
 
 
 var smtpTransport = nodemailer.createTransport({

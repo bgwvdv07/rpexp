@@ -20,74 +20,89 @@ app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
 app.use(upload.array()); 
-app.use(express.static(__dirname + '/public', {
-  extensions: ['html']
-}));
+
+
+
+
+
+app.use((req, res, next) => {
+  if (req.url.endsWith('/')) {
+    req.url += 'index';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+});
 
 app.use((req, res, next) => {
   if (req.url.endsWith('/about')) {
-    req.url = req.url + 'about.html';
+    req.url += 'about';
   } else if (!path.extname(req.url)) {
-    rq.url = req.url + '.html';
+    req.url += '.html';
   }
   next()
 });
 
 app.use((req, res, next) => {
   if (req.url.endsWith('/garden-installation')) {
-    req.url = req.url + 'garden-installation.html';
+    req.url += 'garden-installation';
   } else if (!path.extname(req.url)) {
-    rq.url = req.url + '.html';
+    req.url += '.html';
   }
   next()
 });
 
 app.use((req, res, next) => {
   if (req.url.endsWith('/deck-arbor')) {
-    req.url = req.url + 'deck-arbor.html';
+    req.url += 'deck-arbor';
   } else if (!path.extname(req.url)) {
-    rq.url = req.url + '.html';
+    req.url += '.html';
   }
   next()
 });
 
 app.use((req, res, next) => {
   if (req.url.endsWith('/fence')) {
-    req.url = req.url + 'fence.html';
+    req.url +='fence.html';
   } else if (!path.extname(req.url)) {
-    rq.url = req.url + '.html';
+    req.url += '.html';
   }
   next()
 });
 
 app.use((req, res, next) => {
-  if (req.url.endsWith('/pavers')) {
-    req.url = req.url + 'pavers.html';
+  if (req.url.endsWith('/hardscape')) {
+    req.url += 'hardscape';
   } else if (!path.extname(req.url)) {
-    rq.url = req.url + '.html';
+    req.url += '.html';
   }
   next()
 });
 app.use((req, res, next) => {
   if (req.url.endsWith('/404')) {
-    req.url = req.url + '404.html';
+    req.url += '404';
   } else if (!path.extname(req.url)) {
-    rq.url = req.url + '.html';
+    req.url += '.html';
   }
   next()
 });
+
+
 
 app.use((req, res, next) => {
   if (req.url.endsWith('/contact')) {
-    req.url = req.url + 'contact.html';
+    req.url += 'contact';
   } else if (!path.extname(req.url)) {
-    rq.url = req.url + '.html';
+    req.url += '.html';
   }
   next()
-});
+}); 
 
 
-var smtpTransport = nodemailer.createTransport({
+app.use(express.static(path.join(__dirname, 'public')));
+
+
+/*var smtpTransport = nodemailer.createTransport({
     service: 'Gmail',
     host: 'smtp.gmail.com',
     port: 587,
@@ -188,14 +203,15 @@ app.post('/contact', upload.none(), function(req, res) {
   </script>
 </body>
 </html>`);
-           /*return res.status(200).redirect("/contact");*/
+          
            
           }
         });
     
 });
+*/
 
-
+/*
 
 router.get('/', function (req, res) {
  
@@ -239,21 +255,34 @@ router.get('/robots.txt', function(req, res) {
 })
 
 
-app.get('/submission', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'submission.html'))
-})
-
 app.get('/privacy-policy', function (req, res) {
     res.sendFile('/public/privacy-policy.html', {root: __dirname })
 })
 app.get('/termsofservice', function (req, res) {
     res.sendFile('/public/termsofservice.html', {root: __dirname })
 })
+*/
+
+app.get('/', (req, res) => {
+  const filePath = path.join(__dirname, 'public', '/index.html');
+
+  fs.existsSync(filePath) ? res.sendPath(filePath) : res.status(404).send('Not Found');
+});
+
+
+app.get('/privacy-policy', function (req, res) {
+    res.sendFile('/public/privacy-policy.html', {root: __dirname })
+})
+app.get('/termsofservice', function (req, res) {
+    res.sendFile('/public/termsofservice.html', {root: __dirname })
+}) 
 
 
 module.exports.handler = serverless(app);
 
  /*app.listen(PORT, () => {
   console.log('port 3000')
-})*/
+})
   
+
+*/

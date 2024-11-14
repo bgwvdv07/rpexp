@@ -1,1 +1,6 @@
-{ "version": 2, "rewrites": [{ "source": "/(.*)", "destination": "/public" }] }
+{ "version": 2,
+ "rewrites": "",
+
+  "cleanUrls": true
+
+}

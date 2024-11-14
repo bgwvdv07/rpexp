@@ -6,10 +6,8 @@ const serverless = require('serverless-http');
 const PORT = 3000;
 const router = express.Router();
 const cors = require('cors');
-const nodemailer = require('nodemailer');
 const bodyParser = require('body-parser');
-var multer = require('multer');
-var upload = multer();
+
 
 
 
@@ -19,13 +17,13 @@ app.use(compression());
 app.use(cors());
 app.use(bodyParser.urlencoded({ extended: true }));
 app.use(bodyParser.json());
-app.use(upload.array()); 
 
 
 
 
 
-app.use(express.static(path.join(__dirname, 'public')));
+
+app.use(express.static( 'public'));
 
 
 /*var smtpTransport = nodemailer.createTransport({
@@ -152,31 +150,31 @@ app.get('/about', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'about.html'))
 })
 
-router.get('/garden-installation', function (req, res) {
+app.get('/garden-installation', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'garden-installation.html'))
 })
 
-router.get('/pavers', function (req, res) {
+app.get('/pavers', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'pavers.html'))
 })
 
-router.get('/deck-arbor', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public','deck-arbor.html'))
+app.get('/deck-arbor', function (req, res) {
+    res.sendFile(path.join(__dirname, 'pumblic','deck-arbor.html'))
 })
 
-router.get('/fence', function (req, res) {
+app.get('/fence', function (req, res) {
     res.sendFile(path.join(__dirname, 'public','fence.html'))
 })
 
-router.get('/sitemap.xml', function (req, res) {
+app.get('/sitemap.xml', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'sitemap.xml'))
 })
 
-router.get('*', function (req, res) {
+app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'public','404.html'))
 })
 
-router.get('/robots.txt', function(req, res) {
+app.get('/robots.txt', function(req, res) {
     res.sendFile(path.join(__dirname, 'public', 'robots.txt'))
 })
 
@@ -191,84 +189,14 @@ app.get('/termsofservice', function (req, res) {
 
 
 
-app.use((req, res, next) => {
-  if (req.url.endsWith('/')) {
-    req.url += 'index';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/about')) {
-    req.url += 'about';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/garden-installation')) {
-    req.url += 'garden-installation';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/deck-arbor')) {
-    req.url += 'deck-arbor';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/fence')) {
-    req.url +='fence.html';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/hardscape')) {
-    req.url += 'hardscape';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-app.use((req, res, next) => {
-  if (req.url.endsWith('/404')) {
-    req.url += '404';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
 
 
 
-app.use((req, res, next) => {
-  if (req.url.endsWith('/contact')) {
-    req.url += 'contact';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-}); 
 
+module.exports.handler = serverless(app);
 
-/*module.exports.handler = serverless(app);*/
-
- app.listen(PORT, () => {
+/* app.listen(PORT, () => {
   console.log('port 3000')
 })
-  
+  */
 

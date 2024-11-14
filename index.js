@@ -25,80 +25,6 @@ app.use(upload.array());
 
 
 
-app.use((req, res, next) => {
-  if (req.url.endsWith('/')) {
-    req.url += 'index';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/about')) {
-    req.url += 'about';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/garden-installation')) {
-    req.url += 'garden-installation';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/deck-arbor')) {
-    req.url += 'deck-arbor';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/fence')) {
-    req.url +='fence.html';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/hardscape')) {
-    req.url += 'hardscape';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-app.use((req, res, next) => {
-  if (req.url.endsWith('/404')) {
-    req.url += '404';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-});
-
-
-
-app.use((req, res, next) => {
-  if (req.url.endsWith('/contact')) {
-    req.url += 'contact';
-  } else if (!path.extname(req.url)) {
-    req.url += '.html';
-  }
-  next()
-}); 
-
-
 app.use(express.static(path.join(__dirname, 'public')));
 
 
@@ -262,6 +188,81 @@ app.get('/termsofservice', function (req, res) {
     res.sendFile('/public/termsofservice.html', {root: __dirname })
 })
 
+
+
+
+app.use((req, res, next) => {
+  if (req.url.endsWith('/')) {
+    req.url += 'index';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+});
+
+app.use((req, res, next) => {
+  if (req.url.endsWith('/about')) {
+    req.url += 'about';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+});
+
+app.use((req, res, next) => {
+  if (req.url.endsWith('/garden-installation')) {
+    req.url += 'garden-installation';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+});
+
+app.use((req, res, next) => {
+  if (req.url.endsWith('/deck-arbor')) {
+    req.url += 'deck-arbor';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+});
+
+app.use((req, res, next) => {
+  if (req.url.endsWith('/fence')) {
+    req.url +='fence.html';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+});
+
+app.use((req, res, next) => {
+  if (req.url.endsWith('/hardscape')) {
+    req.url += 'hardscape';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+});
+app.use((req, res, next) => {
+  if (req.url.endsWith('/404')) {
+    req.url += '404';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+});
+
+
+
+app.use((req, res, next) => {
+  if (req.url.endsWith('/contact')) {
+    req.url += 'contact';
+  } else if (!path.extname(req.url)) {
+    req.url += '.html';
+  }
+  next()
+}); 
 
 
 /*module.exports.handler = serverless(app);*/

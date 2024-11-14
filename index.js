@@ -213,7 +213,7 @@ app.post('/contact', upload.none(), function(req, res) {
 
 
 
-router.get('/', function (req, res) {
+app.get('/', function (req, res) {
  
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
 })
@@ -222,7 +222,7 @@ app.get('/contact', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'contact.html'))
 })
 
-router.get('/about', function (req, res) {
+app.get('/about', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'about.html'))
 })
 
@@ -264,12 +264,10 @@ app.get('/termsofservice', function (req, res) {
 
 
 
+/*module.exports.handler = serverless(app);*/
 
-module.exports.handler = serverless(app);
-
- /*app.listen(PORT, () => {
+ app.listen(PORT, () => {
   console.log('port 3000')
 })
   
 
-*/

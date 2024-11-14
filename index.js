@@ -211,7 +211,7 @@ app.post('/contact', upload.none(), function(req, res) {
 });
 */
 
-/*
+
 
 router.get('/', function (req, res) {
  
@@ -261,21 +261,8 @@ app.get('/privacy-policy', function (req, res) {
 app.get('/termsofservice', function (req, res) {
     res.sendFile('/public/termsofservice.html', {root: __dirname })
 })
-*/
-
-app.get('/', (req, res) => {
-  const filePath = path.join(__dirname, 'public', '/index.html');
-
-  fs.existsSync(filePath) ? res.sendPath(filePath) : res.status(404).send('Not Found');
-});
 
 
-app.get('/privacy-policy', function (req, res) {
-    res.sendFile('/public/privacy-policy.html', {root: __dirname })
-})
-app.get('/termsofservice', function (req, res) {
-    res.sendFile('/public/termsofservice.html', {root: __dirname })
-}) 
 
 
 module.exports.handler = serverless(app);

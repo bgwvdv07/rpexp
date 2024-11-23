@@ -1099,8 +1099,8 @@ textarea.w-select {
   position: relative;
   vertical-align: top;
   text-decoration: none;
-  color: #222222;
-  padding: 20px;
+  color: #000;
+  
   text-align: left;
   margin-left: auto;
   margin-right: auto;
@@ -1113,7 +1113,7 @@ textarea.w-select {
   user-select: none;
   display: inline-block;
   cursor: pointer;
-  padding-right: 40px;
+ 
 }
 .w-dropdown-toggle:focus {
   outline: 0;
@@ -1143,7 +1143,7 @@ textarea.w-select {
   color: #222222;
 }
 .w-dropdown-link.w--current {
-  color: #0082f3;
+  color: orange;
 }
 .w-dropdown-link:focus {
   outline: 0;

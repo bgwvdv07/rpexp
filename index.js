@@ -154,12 +154,12 @@ app.get('/garden-installation', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'garden-installation.html'))
 })
 
-app.get('/pavers', function (req, res) {
-    res.sendFile(path.join(__dirname, 'public', 'pavers.html'))
+app.get('/hardscape', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public', 'hardscape.html'))
 })
 
-app.get('/deck-arbor', function (req, res) {
-    res.sendFile(path.join(__dirname, 'pumblic','deck-arbor.html'))
+app.get('/deck', function (req, res) {
+    res.sendFile(path.join(__dirname, 'public','deck.html'))
 })
 
 app.get('/fence', function (req, res) {
@@ -180,10 +180,10 @@ app.get('/robots.txt', function(req, res) {
 
 
 app.get('/privacy-policy', function (req, res) {
-    res.sendFile('/public/privacy-policy.html', {root: __dirname })
+    res.sendFile(path.join(__dirname, 'public', 'privacy-policy.html'))
 })
 app.get('/termsofservice', function (req, res) {
-    res.sendFile('/public/termsofservice.html', {root: __dirname })
+    res.sendFile(path.join(__dirname, 'public', 'termsofservice.html'))
 })
 
 
@@ -195,8 +195,9 @@ app.get('/termsofservice', function (req, res) {
 
 module.exports.handler = serverless(app);
 
-/* app.listen(PORT, () => {
+/*
+app.listen(PORT, () => {
   console.log('port 3000')
-})
-  */
+})*/
+  
 

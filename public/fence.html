@@ -173,8 +173,7 @@
    border: 17px solid darkseagreen !important;
  }
  .div-block-4 {
-   background-color: floralwhite;
-   border-radius: 5px;
+   box-shadow: 6px 7px 5px rgb(83,45,59, .4) !important;
  }
  .btn-wrapper {
    display: flex;
@@ -405,9 +404,7 @@ picture > img {
    border-radius: 5px;
    margin: 15px;
  }
- .grid-item p {
-    width: 350px;
-  }
+
 /*  .grid-item--width2 {
    width: 40%;
  }
@@ -569,37 +566,52 @@ picture > img {
   <div data-collapse="medium" data-animation="default" data-duration="400" data-easing="ease" data-easing2="ease" role="banner" class="container">
     <div class="navigation w-nav" id="header">
         <div class="div-block-4">
-          <a href="/" aria-current="page" class="navigation-item w-nav-link w--current logo-link" style="height:auto; display: flex; flex-direction: column;align-items: center; justify-content: center;" >
+          <h1 id="heading" style="line-height: 60px; text-align: center;">Reppard's Landscaping</h1>
+          <a href="/" aria-current="page" class=" w--current" style="height:auto; display: flex; flex-direction: column;align-items: center; justify-content: center; text-decoration: none;" >
                 
               
-            <h1 id="heading" style="line-height: 60px; text-align: center;">Reppard's Landscaping</h1>
+            
             <img width=150 height=150 tabindex="1" src="https://res.cloudinary.com/bay-area-rides/image/upload/v1727550079/reppardsimages/images/logojr-removebg-preview_bkzx9h.png"/>
           </a>
+
+          <h4 class="heading-jumbo" id="motto">"Enhance The Beauty Of Your Garden"</h4>
+            <blockquote>- John Reppard</blockquote>
         </div>
-      </div>
-    <div class="navigation-items">
-      <div class="navigation-wrap">
-        <article role="navigation" class="navigation-items w-nav-menu">
-          <a href="/" class="navigation-item w-nav-link">Home</a>
-          <a href="/about" class="navigation-item w-nav-link">About</a>
-          <a href="/contact" class="navigation-item w-nav-link">Contact</a>
-          <div data-hover="false" data-delay="20" class="w-dropdown">
-            <div class="w-dropdown-toggle">
-              <div class="w-icon-dropdown-toggle"></div>
-              <div data-w-id="" style="width:2.5em; height:2em">Work</div>
-            </div>
-            <nav class="w-dropdown-list">
-              <a href="/garden-installation" class="w-dropdown-link">Garden Installation</a>
-              <a href="/deck-arbor" class="w-dropdown-link">Deck &amp; Arbor</a>
-              <a href="/fence" aria-current="page" class="w-dropdown-link w--current">Fence &amp; Barrier</a>
-              <a href="/pavers" class="w-dropdown-link">Hardscape</a>
-            </nav>
+
+
+         <div class="navigation-items" style="margin-top: 35px; border-radius: 10px;">
+          <a href="/" data-w-id="74c3ee64-2517-f32d-17e4-d0b5ecf082bf" aria-current="page" class="logo-link w-nav-brand w--current" style="height:auto"></a>
+          <div class="navigation-wrap">
+            <article role="navigation" class="navigation-items w-nav-menu" style="border-radius: 10px;">
+              <a href="/" aria-current="page" class="navigation-item w-nav-link w--current">&#127969; Home</a>
+              <a href="/about" class="navigation-item w-nav-link">&#128221; About</a>
+              <a href="/contact" class="navigation-item w-nav-link">&#128223; Contact</a>
+              <div data-hover="false" data-delay="20" class="w-dropdown">
+                <div class="w-dropdown-toggle" style="padding: none !important;">
+                  <div data-w-id="698b71a6-8350-d528-6b5e-41074466f059" style="">&#128668; Services</div>
+                  <div class="w-icon-dropdown-toggle" style="display: none; padding:none"></div>
+                  
+                </div>
+                <nav class="w-dropdown-list" style="background: seagreen !important;">
+                  <a href="/garden-installation" class="w-dropdown-link">Garden Installation</a>
+                  <a href="/deck" class="w-dropdown-link">Deck &amp; Arbor </a>
+                  <a href="/fence" class="w-dropdown-link">Fence &amp; Barrier</a>
+                  <a href="/hardscape" class="w-dropdown-link">Hardscape</a>
+                  
+                </nav>
+              </div>
+            </article>
+            <div class="menu-button w-nav-button"><img src="images/menu-icon_1menu-icon.png" width="22" height="22" alt="" class="menu-icon"></div>
           </div>
-        </article>
-        <div class="menu-button w-nav-button"><img src="../images/menu-icon_1menu-icon.png" width="22"  height="22" class="menu-icon"></div>
+          </div>
+
       </div>
-    </div>
-  </div>
+
+
+    
+
+
+  
   <div class="section" style="display: flex;">
     <div class="container" >
       <div class="w-layout-grid project-overview-grid">
@@ -633,11 +645,20 @@ picture > img {
           </div>
         </div>
         <div class="section grid-item" id="grid-item">
-          <img src="../images/garden10_hgkh9v-Square.jpg" width="920" alt="decorative perimeter wood picket fence with maple brown finish protecting garden installation" sizes="(max-width: 479px) 100vw, (max-width: 991px) 94vw, 99vw" loading="lazy" srcset="../images/garden10_hgkh9v-Square-p-500.jpg 500w, ../images/garden10_hgkh9v-Square-p-800.jpg 800w, ../images/garden10_hgkh9v-Square.jpg 1000w" class="detail-image"><img src="../images/fence2_dnr4oz-Square.png" width="920" alt="thicker wood frame picket fence protecting new garden install in Oakland neighborhood" sizes="(max-width: 479px) 100vw, (max-width: 991px) 94vw, 99vw" loading="lazy" srcset="../images/fence2_dnr4oz-Square-p-500.png 500w, ../images/fence2_dnr4oz-Square-p-800.png 800w, ../images/fence2_dnr4oz-Square.png 1000w" class="detail-image"><img src="../images/fence5_urwagd-Square.jpg" width="920" alt="Hogwire fence with lumber support frames protecting Oakland property" sizes="(max-width: 479px) 100vw, (max-width: 991px) 94vw, 99vw" loading="lazy" srcset="../images/fence5_urwagd-Square-p-500.jpg 500w, ../images/fence5_urwagd-Square-p-800.jpg 800w, ../images/fence5_urwagd-Square.jpg 1000w" class="detail-image">
+          <img src="../images/garden10_hgkh9v-Square.jpg" width="920" alt="decorative perimeter wood picket fence with maple brown finish protecting garden installation" sizes="(max-width: 479px) 100vw, (max-width: 991px) 94vw, 99vw" loading="lazy" srcset="../images/garden10_hgkh9v-Square-p-500.jpg 500w, ../images/garden10_hgkh9v-Square-p-800.jpg 800w, ../images/garden10_hgkh9v-Square.jpg 1000w" class="detail-image">
+
         </div>
+        <div class="section grid-item">
+          <img src="../images/fence2_dnr4oz-Square.png" width="920" alt="thicker wood frame picket fence protecting new garden install in Oakland neighborhood" sizes="(max-width: 479px) 100vw, (max-width: 991px) 94vw, 99vw" loading="lazy" srcset="../images/fence2_dnr4oz-Square-p-500.png 500w, ../images/fence2_dnr4oz-Square-p-800.png 800w, ../images/fence2_dnr4oz-Square.png 1000w" class="detail-image">
+        </div>
+        <div class="section grid-item">
+          <img src="../images/fence5_urwagd-Square.jpg" width="920" alt="Hogwire fence with lumber support frames protecting Oakland property" sizes="(max-width: 479px) 100vw, (max-width: 991px) 94vw, 99vw" loading="lazy" srcset="../images/fence5_urwagd-Square-p-500.jpg 500w, ../images/fence5_urwagd-Square-p-800.jpg 800w, ../images/fence5_urwagd-Square.jpg 1000w" class="detail-image">
+        </div>
+        </div>
+
       </div>
     </div>
-   </div> 
+   
    
 
  <div class="footer-wrap">
@@ -646,11 +667,13 @@ picture > img {
         <div class="paragraph-tiny"></div>
       </a>
     </div>
-    <div class="footer-links">
-      <a href="https://m.yelp.com/biz/reppards-landscaping-oakland" target="_blank" class="footer-item">Yelp</a>
+   
+    <div class="footer-links" style="display: none;">
+      <a href="https://m.yelp.com/biz/reppards-landscaping-oakland" target="_blank" class="footer-item" >Yelp</a>
       <a href="https://g.co/kgs/SRBiUvs" target="_blank" class="footer-item">Google</a>
     </div>
   </div>
+</div>
   <script type="text/javascript">
     function checkAlt(id) {
       const imageElement = document.getElementById(id);

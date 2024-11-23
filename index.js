@@ -195,8 +195,8 @@ app.get('/termsofservice', function (req, res) {
 
 module.exports.handler = serverless(app);
 
-/*
-app.listen(PORT, () => {
+
+/*app.listen(PORT, () => {
   console.log('port 3000')
 })*/
   

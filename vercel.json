@@ -4,12 +4,13 @@
 
   "headers": [
     {
-    "source": "*",
+    "source": "/(.*)",
     "headers": [
       {
       "key": "accept-encoding",
-      "value": "g-zip"
+      "value": "gzip"
     },
+
     ]
 }
   ]

@@ -7,9 +7,9 @@
     "source": "/(.*)",
     "headers": [
       {
-      "key": "accept-encoding",
+      "key": "Content-Encoding",
       "value": "gzip"
-    },
+    }
 
     ]
 }

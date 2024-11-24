@@ -1,5 +1,17 @@
 { "version": 2,
 
-  "cleanUrls": true
+  "cleanUrls": true,
+
+  "headers": [
+    {
+    "source": "/(.*)",
+    "headers": [
+      {
+      "key": "accept-encoding",
+      "value": "g-zip"
+    }
+    ]
+}
+  ]
 
 }

@@ -141,7 +141,7 @@ app.post('/contact', upload.none(), function(req, res) {
 app.get('/', function (req, res) {
  
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-   /* req.setRequestHeader("Accept-Encoding", "gzip");*/
+    req.setRequestHeader("Content-Encoding", "gzip");
 })
 
 app.get('/contact', function (req, res) {

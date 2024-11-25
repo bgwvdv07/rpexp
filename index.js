@@ -5,19 +5,18 @@ const path = require('path');
 const app = express();
 const serverless = require('serverless-http');
 const PORT = 3000;
-const router = express.Router();
 const cors = require('cors');
-const bodyParser = require('body-parser');
-
-
-
+const sassMiddleware = require('node-sass-middleware');
+const connect = require('connect');
 
 require('dotenv').config();
 
+
+
+
+
 app.use(compression());
 app.use(cors());
-app.use(bodyParser.urlencoded({ extended: true }));
-app.use(bodyParser.json());
 
 
 
@@ -25,6 +24,18 @@ app.use(bodyParser.json());
 
 
 app.use(express.static( 'public'));
+
+const srcPath = __dirname + '/public/scss';
+const destPath = __dirname + '/public/css';
+
+app.use('/css',
+    sassMiddleware({
+        src: srcPath,
+        dest: destPath,
+        debug: true,
+
+    })
+    );
 
 
 /*var smtpTransport = nodemailer.createTransport({
@@ -141,7 +152,7 @@ app.post('/contact', upload.none(), function(req, res) {
 app.get('/', function (req, res) {
  
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-    req.setRequestHeader("Content-Encoding", "gzip");
+     res.header('Content-Encoding', 'gzip');
 })
 
 app.get('/contact', function (req, res) {
@@ -176,6 +187,10 @@ app.get('*', function (req, res) {
     res.sendFile(path.join(__dirname, 'public','404.html'))
 })
 
+app.use(function (req,res, next) {
+    res.status(404).sendFile(path.join(__dirname + 'public/404.html'))
+})
+
 app.get('/robots.txt', function(req, res) {
     res.sendFile(path.join(__dirname, 'public', 'robots.txt'))
 })
@@ -195,11 +210,11 @@ app.get('/termsofservice', function (req, res) {
 
 
 
-module.exports.handler = serverless(app);
+/*module.exports.handler = serverless(app);*/
 
-/*
+
 app.listen(PORT, () => {
   console.log('port 3000')
-})*/
+})
   
 

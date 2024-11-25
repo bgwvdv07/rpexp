@@ -9,8 +9,16 @@
       {
       "key": "accept-encoding",
       "value": "gzip"
-    }
-
+    },
+    {
+    "source": "/(.*)",
+    "headers": [
+      {
+        "key": "content-encoding",
+        "value": "gzip"
+      }
+    ]
+  }
     ]
 }
   ]

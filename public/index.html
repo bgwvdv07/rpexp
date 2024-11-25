@@ -46,10 +46,9 @@
 }
 </script>
 <link rel="preload" as="image" href="images/logojr-removebg-preview_bkzx9h.webp">
-<link rel=preload as=script href=js/jquery-3.7.1.min.js>
- <link rel=preload as=script href="js/webflow.min.js">
-<link rel=preload as=script href=js/jquery-3.7.1.min.js>
- <link rel=preload as=script href="js/webflow.min.js">
+<link rel=preload as=script href=js/masonry.pkgd.min.js>
+ <link rel=preload as=script href="js/imagesloaded.pkgd.min.js">
+
 <!-- <link rel=preload as=script href=js/imagesloaded.pkgd.min.js> -->
 <link rel=preconnect href=https://fonts.googleapis.com>
 <link rel=preconnect href=https://fonts.gstatic.com crossorigin>
@@ -71,15 +70,53 @@
 <noscript><link rel="stylesheet" href="css/webflow.min.css"></noscript>
 <link rel="preload" href="css/reppard-landscape.webflow.min.css" as="style" onload="this.onload=null;this.rel='stylesheet'">
 <noscript><link rel="stylesheet" href="css/reppard-landscape.webflow.min.css"></noscript>
+
+<link rel="stylesheet" href="css/menu.css"/>
  
 <link href=images/favicon.ico rel=icon type=image/x-icon>
 <link href=images/favicon-16x16.png rel=apple-touch-icon type=image/x-icon>
 <link rel=icon type=image/png sizes=192x192 href=images/android-chrome-192x192.png>
 <link rel=icon type=image/png sizes=512x512 href=images/android-chrome-512x512.png>
+<script src="http://ajax.googleapis.com/ajax/libs/jquery/1.7.1/jquery.min.js" type="text/javascript"></script>
 
 <style>
 
-  h1,h2,h3,h4,h5{font-family:work-sans,sans-serif!important}article,p,a,em,span{color:black;font-family:karla,sans-serif!important}.w-dropdown-list.w--open{left:-100px}.logo-link{width:auto;height:auto;box-shadow:6px 7px 5px rgb(83,45,59,.4)}img .menu-icon{height:auto;width:auto}.navigation{flex-direction:column!important;display:flex}.navigation-items{background-color:white}.navigation-item{padding:5px;height:auto}.intro-wrap{border-radius:5px;align-items:center!important;margin-bottom:0;margin-top:10px!important}#heading{font-size:50px}blockquote{text-align:center; min-height: auto;}.body{background-color:white;max-width:100%;margin:0;padding:0;overflow-x:hidden;border:17px solid darkseagreen!important}.div-block-4{padding: 12px 16px;background-color:floralwhite;border-radius:5px;box-shadow:6px 7px 5px rgb(83,45,59,.4)}.btn-wrapper{display:flex;justify-content:center;align-items:center}.btn-wrapper button{background-color:lightgreen;width:50vh;height:10vh;border-radius:15px;border:5px solid darkseagreen}.section.cc-contact{background-color:floralwhite}.contact-form-wrap{display:grid}.w-layout-grid{display:flex!important;flex-direction:column!important;justify-items:center}@media screen and (min-width:1024px){picture>img{width:1135px;height:638px}.section.cc-contact{margin:auto;min-width:100vh}}@media screen and (min-device-width:768px) and (max-device-width:1024px){picture>img{width:900px;height:675px}}@media screen and (max-device-width:480px) and (orientation:portrait){picture>img{width:537px;height:537px}}@media screen and (max-device-width:640px) and (orientation:landscape){picture>img{width:751px;height:751px}}@media screen and (max-device-width:640px).navigation{justify-content:center;flex-wrap:wrap;display:grid}.div-block-4{margin:auto;align-items:center}#header>div.div-block-4>a{height:auto;display:flex;flex-direction:column;flex-wrap:wrap;align-items:center}.section.cc-contact{background-color:floralwhite}}@media screen and (min-device-width:320px) and (-webkit-min-device-pixel-ratio:2){picture>img{width:200px;height:200px}}@media(device-height:568px) and (device-width:320px) and (-webkit-min-device-pixel-ratio:2){picture>img{width:200px;height:200px}}#contact{display:grid;justify-items:center}.contact-form-wrap{display:grid}.project-name-link{font-size:43px;background-color:lightgreen}@media screen and (max-width:991px){.works-grid{display:grid!important;align-items:initial!important}}.container{width:auto}.grid{max-width:1200px;grid-template-columns:1 fr;display:grid;width:100%;margin:auto;justify-items:center}.grid:after{content:'';display:block;clear:both}.grid-item{left:auto!important;float:left;width:100%;border:8px solid black;border-color:hsla(0%,0%,0%,0%);border-radius:5px;margin:15px}picture>img{height:auto;width:100%}#header>div.div-block-4>a>img{max-width:100%}#stamp{display:flex;flex-direction:column;flex-wrap:wrap;align-content:space-around;justify-content:center;align-items:center;margin-bottom:80px;margin-left:auto;margin-right:auto}.works-grid{display:flex!important;margin-bottom:15px}li{list-style-type:none;font-size:22px;letter-spacing:7px;font-weight:300;line-height:20px;padding:5px;margin:11px}.carrer-headline-wrap{box-shadow:outset 5px 5px 10px #532d3b;margin:10px;padding:10px}.work-experience-grid{position:relative;display:block;box-shadow:outset 5px 5px 10px #532d3b}.work-position-wrap{margin:10px;padding:10px}.contact-headline{display:grid;justify-items:center}span,p{margin:15px;padding:10px}#grid{display:grid}#button{width:100%;border-radius:20px;background-color:darkseagreen}#button:hover{background-color:orange;font-size:20px}#button:active{background:linear-gradient(45deg,red,orange,black)}#contactemail{display:grid}.paragraph-light{font-size:19px;opacity:.8}.work-description{margin:15px;padding:10px;text-align:end}a{text-decoration:none}
+  h1,h2,h3,h4,h5{font-family:work-sans,sans-serif!important}article,p,a,em,span{color:black;font-family:karla,sans-serif!important}.w-dropdown-list.w--open{left:-100px}.logo-link{width:auto;height:auto;}img .menu-icon{height:auto;width:auto}.navigation{flex-direction:column!important;display:flex}.navigation-items{background-color:white}.navigation-item{padding:5px;height:auto}.intro-wrap{border-radius:5px;align-items:center!important;margin-bottom:0;margin-top:10px!important}#heading{font-size:50px}blockquote{text-align:center; min-height: auto;}.body{background-color:floralwhite;max-width:100%;margin:0;padding:0;overflow-x:hidden;border:17px solid darkseagreen!important}
+  .div-block-4{text-align:center;padding: 12px 16px;background-color:floralwhite;border-radius:5px;box-shadow:6px 7px 5px rgb(83,45,59,.4);mix-blend-mode: normal;
+    position: relative; width: 100%; box-sizing: border-box;}
+  .btn-wrapper{display:flex;justify-content:center;align-items:center}.btn-wrapper button{background-color:lightgreen;width:50vh;height:10vh;border-radius:15px;border:5px solid darkseagreen}.section.cc-contact{background-color:floralwhite}.contact-form-wrap{display:grid}.w-layout-grid{display:flex!important;flex-direction:column!important;justify-items:center}
+  @media screen and (min-width:1024px){picture>img{width:1135px;height:638px}.section.cc-contact{margin:auto;min-width:100vh}}
+  @media screen and (min-device-width:768px) and (max-device-width:1024px){
+    picture>img{width:900px;height:675px}
+    
+  }
+  /* Medium devices (landscape tablets, 768px and up) */
+@media only screen and (min-width: 768px) {
+      #mobilenav {
+        display: none !important;
+      }
+  }
+  @media screen and (max-device-width:480px) and (orientation:portrait){picture>img{width:537px;height:537px}
+    .navigation-items{ display:none !important;
+      .logo img {
+        width: 100px !important;
+        height: 100px !important;
+      }
+
+  }
+  @media screen and (max-device-width:640px) and (orientation:landscape){picture>img{width:751px;height:751px}
+    #mobilenav {
+      display: none !important;
+    }}
+  @media screen and (max-device-width:640px){
+    .navigation-items{ display:none !important; }
+  }
+  .navigation{justify-content:center;flex-wrap:wrap;display:grid}
+  .div-block-4{margin:auto;align-items:center}
+  #header>div.div-block-4>a{height:auto;display:flex;flex-direction:column;flex-wrap:wrap;align-items:center}.section.cc-contact{background-color:floralwhite}}
+  @media screen and (min-device-width:320px) and (-webkit-min-device-pixel-ratio:2){picture>img{width:200px;height:200px}}
+  @media(device-height:568px) and (device-width:320px) and (-webkit-min-device-pixel-ratio:2){picture>img{width:200px;height:200px}}#contact{display:grid;justify-items:center}.contact-form-wrap{display:grid}.project-name-link{font-size:43px;background-color:lightgreen}@media screen and (max-width:991px){.w-nav-menu{display:none;}.navigation-items{background-color: inherit !important;} .works-grid{display:grid!important;align-items:initial!important}}.container{width:auto}.grid{max-width:1200px;grid-template-columns:1 fr;display:grid;width:100%;margin:auto;justify-items:center}.grid:after{content:'';display:block;clear:both}.grid-item{left:auto!important;float:left;width:100%;border:8px solid black;border-color:hsla(0%,0%,0%,0%);border-radius:5px;margin:15px}picture>img{height:auto;width:100%}#stamp{display:flex;flex-direction:column;flex-wrap:wrap;align-content:space-around;justify-content:center;align-items:center;margin-bottom:80px;margin-left:auto;margin-right:auto}.works-grid{display:flex!important;margin-bottom:15px}li{list-style-type:none;font-size:22px;letter-spacing:7px;font-weight:300;line-height:20px;padding:5px;margin:11px}.carrer-headline-wrap{box-shadow:outset 5px 5px 10px #532d3b;margin:10px;padding:10px}.work-experience-grid{position:relative;display:block;box-shadow:outset 5px 5px 10px #532d3b}.work-position-wrap{margin:10px;padding:10px}.contact-headline{display:grid;justify-items:center}p{margin:15px;padding:10px}#grid{display:grid}#button{width:100%;border-radius:20px;background-color:darkseagreen}
+  #button:hover{background-color:#9ac29a;font-size:20px}#button:active{background:linear-gradient(45deg,red,orange,black)}#contactemail{display:grid}.paragraph-light{font-size:19px;opacity:.8}.work-description{margin:15px;padding:10px;text-align:end}a{text-decoration:none}
 
 h1,h2,h3 {
     margin-top: 20px
@@ -181,6 +218,11 @@ ol,ul {
     margin-right: auto
 }
 
+.w-dropdown-link a:hover {
+  background-color: lightseagreen;
+}
+}
+
 .w-form-fail {
     display: none;
     margin-top: 10px;
@@ -258,6 +300,11 @@ textarea.w-input,textarea.w-select {
     display: none;
     min-width: 100%
 }
+.w-dropdown-list a:hover {
+  background-color: #9ac29a;
+}
+}
+
 .w-lightbox-group .w-lightbox-figure,.w-lightbox-item,.w-nav-button,.w-tab-link {
     cursor: pointer
 }
@@ -348,7 +395,7 @@ p {
 
 a {
     color: #1a1b1f;
-    text-decoration: underline;
+    text-decoration: none;
     transition: opacity .2s;
     display: block
 }
@@ -402,7 +449,7 @@ label {
     z-index: 1;
     padding-left: 10px;
     padding-right: 10px;
-    box-shadow: 6px 7px 5px rgb(0 0 0 / .2)
+    
 }
 
 .navigation-item {
@@ -451,14 +498,7 @@ label {
     margin-right: -20px;
     display: flex
 }
-.work-description {
-    flex-direction: column;
-    justify-content: center;
-    align-items: center;
-    width: 100%;
-    margin-bottom: 60px;
-    display: flex
-}
+
 .works-grid {
     grid-column-gap: 30px;
     grid-row-gap: 30px;
@@ -471,7 +511,7 @@ label {
     border: 1px solid #e4e4e4;
     border-radius: 0;
     margin-bottom: 18px;
-    padding: 21px 20px;
+    padding: 5px 5px;
     font-size: 14px;
     line-height: 26px;
     transition: border-color .4s
@@ -543,16 +583,8 @@ label {
     line-height: 20px;
     text-decoration: none
 }
-.div-block {
-    flex-direction: column;
-    justify-content: center;
-    align-items: stretch;
-    display: flex
-}
-.div-block-4 {
-    mix-blend-mode: normal;
-    position: relative
-}
+
+
 
 .body {
     outline-offset: 0;
@@ -622,13 +654,15 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,secti
 <div class="navigation w-nav" id="header">
 <h2>Reppard's Landscaping</h2>
 <div class="div-block-4">
-<a href=/ aria-current=page class=w--current style="display:flex;align-items:center;flex-direction:column;">
-<img width=150 height=150 tabindex=0 alt="reppard's landscaping logo" aria-label="Logo home page" src="images/logojr-removebg-preview_bkzx9h.webp" fetchpriority="high"/>
+<a href=/ aria-current=page class="logo w--current" style="display:flex;align-items:center;flex-direction:column;">
+<img tabindex=0  alt="reppard's landscaping logo" aria-label="Logo home page" src="images/logojr-removebg-preview_bkzx9h.webp" fetchpriority="high"/>
 </a>
 <h5>"Enhance The Beauty Of Your Garden"</h5>
 <blockquote>- John Reppard</blockquote>
 </div>
-<div class="container">
+
+
+
 <div class="navigation-items" style="margin-top:35px;border-radius:10px;">
 <a href=/ data-w-id=74c3ee64-2517-f32d-17e4-d0b5ecf082bf aria-current=page class="logo-link w-nav-brand w--current" style=height:auto></a>
 <div class="navigation-wrap" style="margin:auto;">
@@ -638,7 +672,7 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,secti
 <a href=/contact class="navigation-item w-nav-link">&#128223; Contact</a>
 <div data-hover=false data-delay=20 class="w-dropdown">
 <div class="w-dropdown-toggle" style="padding:none!important;">
-<div data-w-id=698b71a6-8350-d528-6b5e-41074466f059 style>&#128668; Services</div>
+<div data-w-id=698b71a6-8350-d528-6b5e-41074466f059 style><i id="tractor">&#128668;</i> Services</div>
 <div class="w-icon-dropdown-toggle" style="display:none;padding:none;"></div>
 </div>
 <nav class="w-dropdown-list" style="background:seagreen!important;">
@@ -653,21 +687,38 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,secti
 </div>
 </div>
 
+
 </div>
+<div class="container" id="mobilenav">
+<input type='checkbox' id='mmeennuu'>
+<label class='menu' for='mmeennuu'>
+
+<div class='barry'>
+  <span class='bar'></span>
+  <span class='bar'></span>
+  <span class='bar'></span>
+  <span class='bar'></span>
 </div>
-<div class="section" style="margin-top:100px;">
+  
+<ul>
+  
+  <li><a id='home' href='/garden-installation'>GARDEN INSTALLATION</a></li>
+  <li><a id='about' href='/garden-installation'>IRRIGATION, SPRINKLERS & DRIP </a></li>
+  <li><a id='contact' href='/hardscape'>PAVERS PATIO & WALKWAY DRIVEWAY</a></li>
+  <li><a id='link' href='/deck'>DECKS AND ARBORS</a></li>
+  <li><a id='link' href='/hardscape'>RETAINING WALLS</a></li>
+  <li><a id='link' href='/garden-installation'>DESIGN</a></li>
+</ul>
+
+</label>
+</div>
+
+<div class="section">
 <div class="container" style="display:flex;align-items:center;flex-direction:column;flex-wrap:wrap;">
 <div id="works-grid" class="w-layout-grid works-grid">
 <div class="div-block">
 <div class="work-description">
-<ul role="menu">
-<li role="none"><span role="menuitem">GARDEN INSTALLATION</span></li>
-<li role="none"><span role="menuitem">IRRIGATION, SPRINKLERS & DRIP </span></li>
-<li role="none"><span role="menuitem">PAVERS PATIO & WALKWAY DRIVEWAY</span> </li>
-<li role="none"><span role="menuitem">DECKS AND ARBORS</span></li>
-<li role="none"><span role="menuitem">RETAINING WALLS</span> </li>
-<li role="none"><span role="menuitem">DESIGN </span></li>
-</ul>
+
 </div>
 </div>
 </div>
@@ -856,10 +907,72 @@ article,aside,details,figcaption,figure,footer,header,hgroup,main,menu,nav,secti
 </div>
 </div>
 </div>
-<script src=js/jquery-3.7.1.min.js type=text/javascript async></script>
-<script src=js/webflow.min.js type=text/javascript async></script>
+
+
   <script async src=js/imagesloaded.pkgd.min.js type=text/javascript></script>
 <script async src=js/masonry.pkgd.min.js type=text/javascript></script>  
+<script>
+
+
+  (function($){
+
+    $(window).load(function(e){
+      $('.w-dropdown-toggle').on("click", function() {
+        $(".w-dropdown-list").toggle();
+      })
+      $('.w-dropdown-toggle').on("click", function() {
+        $('#tractor').css({"display":"block", "width":"200px", "position": "absolute"})
+        $('#tractor').animate({ "left": "+=1px"}, "slow");
+        $('#tractor').animate({ "top": "+=2px"}, "fast");
+        $('#tractor').animate({ "bottom": "+=2px"}, "fast");
+        $('#tractor').animate({ "right": "+=1px"}, "fast");
+         $('#tractor').animate({ "top": "+=1px"}, "fast");
+         $('#tractor').animate({ "left": "+=2px"}, "fast");
+          $('#tractor').animate({ "right": "+=1px"}, "fast");
+         $('#tractor').animate({ "top": "+=1px"}, "fast");
+          $('#tractor').animate({ "left": "+=1px"}, "fast");
+        $('#tractor').animate({ "top": "+=2px"}, "slow");
+        $('#tractor').animate({ "bottom": "+=2px"}, "slow");
+        $('#tractor').animate({"left": "+=100px"});
+
+      })
+
+
+       $( 'html' ).click(function() {
+        
+   $("#mmeennuu").prop('checked', false);
+    
+   $('#mmeennuu').click(function(event){
+  event.stopPropagation();
+        if($('.w-dropdown-list').is(":visible")){
+          $('.w-dropdown-list').toggle();
+        }
+     
+});
+});
+
+      /*$('.w-dropdown-toggle').click(function() {
+        $('.w-dropdown-list').css({'display':'block'});
+
+      })*/
+        
+      
+
+    });
+
+    // and/or
+
+    $(document).ready(function(){
+        // the dom is in place, but everything is not necessarily loaded
+    });
+
+})(jQuery);
+
+ 
+
+      
+
+</script>  
  
 
 

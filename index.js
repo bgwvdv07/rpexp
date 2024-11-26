@@ -37,6 +37,11 @@ app.use('/css',
     })
     );
 
+app.use((req, res, next) => {
+    res.append('Content-Encoding', 'gzip');
+    next();
+});
+
 
 /*var smtpTransport = nodemailer.createTransport({
     service: 'Gmail',
@@ -152,32 +157,26 @@ app.post('/contact', upload.none(), function(req, res) {
 app.get('/', function (req, res) {
  
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-     res.set(
-        'Content-Encoding': 'gzip',
-        );
-})
+     
+});
 
 app.get('/contact', function (req, res) {
   res.sendFile(path.join(__dirname, 'public', 'contact.html'))
-})
+});
 
 app.get('/about', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'about.html'))
-    res.set(
-        'Content-Encoding': 'gzip',
-        );
-})
+  
+});
 
 app.get('/garden-installation', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'garden-installation.html'))
-    res.set(
-        'Content-Encoding': 'gzip',
-        );
-})
+   
+});
 
 app.get('/hardscape', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'hardscape.html'))
-})
+});
 
 app.get('/deck', function (req, res) {
     res.sendFile(path.join(__dirname, 'public','deck.html'))

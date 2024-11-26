@@ -1,19 +1,19 @@
-{ "version": 2,
-
+{
+  "version": 2,
   "cleanUrls": true,
-
   "headers": [
     {
-    "source": "/(.*)",
-    "headers": [
-      {
-      "key": "accept-encoding",
-      "value": "gzip"
-    }
+      "source": "/(.*)",
+      "headers": [
+        {
+          "key": "accept-encoding",
+          "value": "gzip"
+        },
+        {
+          "key": "content-encoding",
+          "value": "gzip"
+        }
+      ]
+    },
   ]
-  },
-    
-    ]
 }
-  
-

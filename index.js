@@ -189,7 +189,7 @@ app.get('*', function (req, res) {
 })
 
 app.use(function (req,res, next) {
-    res.status(404).sendFile(path.join(__dirname + 'public/404.html'))
+    res.status(404).sendFile(path.join(__dirname, 'public', '404.html'))
 })
 
 app.get('/robots.txt', function(req, res) {

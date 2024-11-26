@@ -9,13 +9,7 @@
       {
       "key": "accept-encoding",
       "value": "gzip"
-    },
-    
-      {
-        "key": "content-encoding",
-        "value": "gzip"
-      }
-
+    }
   ]
   },
     

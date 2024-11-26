@@ -161,6 +161,7 @@ app.get('/contact', function (req, res) {
 
 app.get('/about', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'about.html'))
+    res.header('Content-Encoding', 'gzip');
 })
 
 app.get('/garden-installation', function (req, res) {

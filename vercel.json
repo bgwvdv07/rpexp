@@ -10,6 +10,8 @@
       "key": "accept-encoding",
       "value": "gzip"
     },
+  ]
+  },
     {
     "source": "/(.*)",
     "headers": [
@@ -21,6 +23,5 @@
   }
     ]
 }
-  ]
+  
 
-}

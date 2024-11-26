@@ -37,11 +37,11 @@ app.use('/css',
     })
     );
 
-app.use((req, res, next) => {
+/*app.use((req, res, next) => {
     res.append('Content-Encoding', 'gzip');
     next();
 });
-
+*/
 
 /*var smtpTransport = nodemailer.createTransport({
     service: 'Gmail',

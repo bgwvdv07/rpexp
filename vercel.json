@@ -4,15 +4,13 @@
       "source": "/",
       "headers": [
         {
-          "key": "Accept-Encoding",
-          "value": "gzip"
-        },
-        {
           "key": "Content-Encoding",
           "value": "gzip"
         }
       ]
-    },
+    }
+       
+    
   ],
   "cleanUrls": true
   

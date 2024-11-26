@@ -1,15 +1,5 @@
 {
-  /*"headers": [
-    {
-      "source": "/(.*)",
-      "headers": [
-        {
-          "key": "Accept-Encoding",
-          "value": "gzip"
-        }
-      ]
-    },
-  ],*/
+ 
   "cleanUrls": true
   
 }

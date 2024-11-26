@@ -1,16 +1,14 @@
 {
   "headers": [
     {
-      "source": "/",
+      "source": "/(.*)",
       "headers": [
         {
-          "key": "Content-Encoding",
+          "key": "Accept-Encoding",
           "value": "gzip"
         }
       ]
-    }
-       
-    
+    },
   ],
   "cleanUrls": true
   

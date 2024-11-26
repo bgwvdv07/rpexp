@@ -12,11 +12,11 @@ const connect = require('connect');
 require('dotenv').config();
 
 
-
+app.use(cors());
 
 
 app.use(compression());
-app.use(cors());
+
 
 
 
@@ -157,7 +157,8 @@ app.post('/contact', upload.none(), function(req, res) {
 app.get('/', function (req, res) {
  
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-     
+    const headers = res.headers['Content-Encoding'];
+    console.log(headers);
 });
 
 app.get('/contact', function (req, res) {

@@ -6,11 +6,11 @@
       "source": "/(.*)",
       "headers": [
         {
-          "key": "accept-encoding",
+          "key": "Accept-Encoding",
           "value": "gzip"
         },
         {
-          "key": "content-encoding",
+          "key": "Content-Encoding",
           "value": "gzip"
         }
       ]

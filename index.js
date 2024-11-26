@@ -152,7 +152,9 @@ app.post('/contact', upload.none(), function(req, res) {
 app.get('/', function (req, res) {
  
     res.sendFile(path.join(__dirname, 'public', 'index.html'));
-     res.setHeader('Content-Encoding', 'gzip');
+     res.set(
+        'Content-Encoding': 'gzip',
+        );
 })
 
 app.get('/contact', function (req, res) {
@@ -161,11 +163,16 @@ app.get('/contact', function (req, res) {
 
 app.get('/about', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'about.html'))
-    res.setHeader('Content-Encoding', 'gzip');
+    res.set(
+        'Content-Encoding': 'gzip',
+        );
 })
 
 app.get('/garden-installation', function (req, res) {
     res.sendFile(path.join(__dirname, 'public', 'garden-installation.html'))
+    res.set(
+        'Content-Encoding': 'gzip',
+        );
 })
 
 app.get('/hardscape', function (req, res) {

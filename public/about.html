@@ -209,17 +209,7 @@
     justify-content: center;
   flex-wrap: wrap;
   }
-  .div-block-4 {
-    display: grid;
-  align-items: center; 
-  }
-  #header > div.div-block-4 > a {
-    height: auto;
-  display: flex;
-  flex-direction: column;
-  flex-wrap: wrap;
-  align-items: center;
-  }
+ 
 
   .section.cc-contact {
     display: grid !important;
@@ -292,6 +282,7 @@ picture > img {
   .div-block-4 {
     background-color: floralwhite;
     border-radius: 5px;
+    box-shadow: 6px 7px 5px rgb(83, 45, 59, .4) !important;
   }
   .btn-wrapper {
     display: flex;
@@ -305,7 +296,14 @@ picture > img {
     border-radius: 15px;
     border: 5px solid darkseagreen;
   }
-
+  .work-position-wrap {
+    justify-content: space-between !important;
+    align-items: flex-start !important;
+    display: flex !important;
+    flex-direction: row !important;
+    flex-wrap: wrap !important;
+    align-content: space-around !important;
+  }
   .section.cc-contact {
       display: grid !important;
       justify-items: center !important;
@@ -367,12 +365,11 @@ picture > img {
           <a href="/" data-w-id="74c3ee64-2517-f32d-17e4-d0b5ecf082bf" aria-current="page" class="logo-link w-nav-brand w--current" style="height:auto"></a>
           <div class="navigation-wrap" style="margin: auto;">
             <article role="navigation" class="navigation-items w-nav-menu" style="border-radius: 10px;">
-              <a href="/" aria-current="page" class="navigation-item w-nav-link w--current">&#127969; Home</a>
-              <a href="/about" class="navigation-item w-nav-link">&#128221; About</a>
-              <a href="/contact" class="navigation-item w-nav-link">&#128223; Contact</a>
+              <a href="/" aria-current="page" class="navigation-item w-nav-link w--current">Home</a>
+              <a href="/about" class="navigation-item w-nav-link">About</a>
               <div data-hover="false" data-delay="20" class="w-dropdown">
                 <div class="w-dropdown-toggle" style="padding: none !important;">
-                  <div data-w-id="698b71a6-8350-d528-6b5e-41074466f059" style="">&#128668; Services</div>
+                  <div data-w-id="698b71a6-8350-d528-6b5e-41074466f059">Services</div>
                   <div class="w-icon-dropdown-toggle" style="display: none; padding:none"></div>
                   
                 </div>
@@ -384,6 +381,8 @@ picture > img {
                   
                 </nav>
               </div>
+              
+              <a href="/contact" class="navigation-item w-nav-link">Contact</a>
             </article>
             <div class="menu-button w-nav-button"><img src="images/menu-icon_1menu-icon.png" width="22" height="22" alt="" class="menu-icon"></div>
           </div>
@@ -421,8 +420,8 @@ picture > img {
           <div class="section">
     <div class="container">
       <div class="w-layout-grid project-description-grid">
-        <div id="w-node-_9fda4a37-cb21-e2a1-58de-88a206fa61ae-e5c48a6e" class="work-position-wrap">
-          <div class="position-name-text">Reppard's Landscaping</div>
+        <div id="w-node-_9fda4a37-cb21-e2a1-58de-88a206fa61ae-e5c48a6e" style="margin:50px" class="work-position-wrap">
+          <div class="position-name-text">John Reppard</div>
           <div class="paragraph-light cc-position-name">Contractor</div>
           <div class="paragraph-tiny cc-paragraph-tiny-light">30 years experience<br></div>
         </div>
@@ -433,7 +432,7 @@ picture > img {
             <p class="paragraph-light">I have worked in the Alameda county area as a licensed contractor for 30 years. I specialize in garden installation, decks, fence, pavers and most other landscape related jobs. </p>
           </div>
           <div class="w-layout-grid work-experience-grid">
-            <div id="w-node-dff26f68-5731-3efa-d3dd-8f65c72d8fc9-e5c48a67" class="work-position-wrap">
+          <div id="w-node-dff26f68-5731-3efa-d3dd-8f65c72d8fc9-e5c48a67"  class="work-position-wrap">
               <div class="position-name-text">John Reppard</div>
               <div class="paragraph-light cc-position-name">Landscaping contractor #1022906</div>
               <div class="paragraph-light cc-paragraph-light">30 years professional experience <br> Merrit college horticulture 2+ years</div> 
@@ -441,22 +440,9 @@ picture > img {
           </div>
   </div>
           
-          <p class="paragraph-light">I&#x27;ve been fixing homes for 20 years and I put a special touch on each one. Every home deserves a unique sensibility to bring it together and I have discovered the secret to bringing this out. </p>
+          
         </div>
-        <div id="w-node-dac044b7-be90-60f3-414d-4224828ffd8f-e5c48a6b" class="w-layout-grid services-items-grid">
-          <div id="w-node-dac044b7-be90-60f3-414d-4224828ffd90-e5c48a6b">
-            <h4> Services </h4>
-            <div class="service-name-text">Garden Installation</div>
-            <div class="service-name-text">Deck &amp; Arbor</div>
-            <div class="service-name-text">Fence</div>
-            <div class="service-name-text">Stone </div>
-          </div>
-          <div id="w-node-dac044b7-be90-60f3-414d-4224828ffd99-e5c48a6b">
-            <div class="service-name-text">Pavers</div>
-            <div class="service-name-text">Irrigation</div>
-            <div class="service-name-text">Lighting</div>
-          </div>
-        </div>
+        
       </div>
       
     </div>

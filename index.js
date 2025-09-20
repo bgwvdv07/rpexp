@@ -6,7 +6,7 @@ const path = require('path');
 const serverless = require('serverless-http');
 const cors = require('cors');
 const dotenv = require("dotenv");
-const sassMiddleware = require('node-sass-middleware');
+const sassMiddleware = require('sass-middleware');
 const { reviewsInterceptor, reviewsMiddleware } = require('./public/js/reviewsMiddleware');
 require('dotenv').config();
 

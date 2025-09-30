@@ -1,40 +1,21 @@
 {
- "cleanUrls": true,
+  "cleanUrls": true,
   "version": 3,
-  "builds": [
-    {
-      "src": "package.json",
-      "use": "@vercel/next"
-    }
-  ],
-  "routes": [
-    // Redirect /blog and /blog/* to blog project
+  "redirects": [
     {
       "source": "/blog",
       "destination": "https://reppards-blog.vercel.app",
-      "status": 301
+      "permanent": true
     },
     {
       "source": "/blog/:slug*",
       "destination": "https://reppards-blog.vercel.app/:slug*",
-      "status": 301
+      "permanent": true
     },
-
-    // Example: redirect old pages to new pages
     {
       "source": "/old-about",
       "destination": "/about",
-      "status": 301
-    },
-
-    // Catch-all route for 404
-    {
-      "handle": "filesystem"
-    },
-    {
-      "src": "/(.*)",
-      "status": 404,
-      "dest": "/_not-found"
+      "permanent": true
     }
   ]
 }

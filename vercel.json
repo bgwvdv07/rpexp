@@ -1,9 +1,6 @@
 {
- 
-  "cleanUrls": true
- 
+ "cleanUrls": true,
   "version": 3,
- 
   "builds": [
     {
       "src": "package.json",
@@ -41,7 +38,3 @@
     }
   ]
 }
-
- 
-
-

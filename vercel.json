@@ -1,6 +1,5 @@
 {
   "cleanUrls": true,
-  "version": 3,
   "redirects": [
     {
       "source": "/blog",

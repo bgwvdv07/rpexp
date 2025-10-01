@@ -123,16 +123,7 @@ export default function Home() {
   };
 
   return (
-    <>
-     
-
-        {/* JSON-LD Structured Data */}
-      <Script
-        id="structured-data"
-        type="application/ld+json"
-        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        strategy="afterInteractive"
-      />
+      
     
     <main className="min-h-screen">
       <Header />
@@ -141,6 +132,13 @@ export default function Home() {
       <Reviews />
       <CallToAction />
       <Footer />
+        {/* JSON-LD Structured Data */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        strategy="afterInteractive"
+      />
     </main>
   )
 }

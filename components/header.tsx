@@ -16,7 +16,7 @@ export function Header() {
             Reviews
           </Link>
           <Link
-            href="https://blog.reppards-landscaping.vercel.app"
+            href="https://reppardslandscaping.com/blog"
             target="_blank"
             rel="noopener noreferrer"
             className="text-sm text-muted-foreground hover:text-foreground transition-colors"

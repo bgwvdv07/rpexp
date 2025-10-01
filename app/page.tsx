@@ -1,4 +1,5 @@
 import Head from 'next/head';
+import Script from 'next/script';
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { PortfolioGrid } from "@/components/portfolio-grid"
@@ -111,11 +112,13 @@ export default function Home() {
         <meta property="og:image" content={`${domain}/public/garden-irrigation-pavers-alameda.jpg`} />
         <meta property="og:description" content="Professional landscaping services in Oakland, Berkeley, Alameda, and surrounding Bay Area cities." />
 
-        {/* JSON-LD */}
-        <script
-          type="application/ld+json"
-          dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
-        />
+        {/* JSON-LD Structured Data */}
+      <Script
+        id="structured-data"
+        type="application/ld+json"
+        dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
+        strategy="afterInteractive"
+      />
       </Head>
     <main className="min-h-screen">
       <Header />

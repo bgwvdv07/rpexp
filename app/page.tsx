@@ -1,11 +1,36 @@
 import Head from 'next/head';
 import Script from 'next/script';
+import { Metadata } from 'next';
 import { Header } from "@/components/header"
 import { Hero } from "@/components/hero"
 import { PortfolioGrid } from "@/components/portfolio-grid"
 import { Reviews } from "@/components/reviews"
 import { CallToAction } from "@/components/call-to-action"
 import { Footer } from "@/components/footer"
+
+
+export const metadata: Metadata = {
+  title: "Reppard's Landscaping",
+  description: "Professional landscaping services in Oakland, Berkeley, Alameda, and surrounding Bay Area cities.",
+  openGraph: {
+    title: "Reppard's Landscaping",
+    description: "Professional landscaping services in Oakland, Berkeley, Alameda, and surrounding Bay Area cities.",
+    url: "https://reppardslandscaping.com",
+    siteName: "Reppard's Landscaping",
+    images: [
+      {
+        url: "https://reppardslandscaping.com/images/lush-garden-softscape-planting.jpg",
+        width: 1200,
+        height: 630,
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  alternates: {
+    canonical: "https://reppardslandscaping.com",
+  },
+};
 
 export default function Home() {
   const domain = "https://reppardslandscaping.com";
@@ -99,18 +124,7 @@ export default function Home() {
 
   return (
     <>
-      <Head>
-        <title>Reppard's Landscaping</title>
-
-        {/* Canonical URL */}
-        <link rel="canonical" href={domain} />
-
-        {/* Open Graph Tags */}
-        <meta property="og:title" content="Reppard's Landscaping" />
-        <meta property="og:type" content="website" />
-        <meta property="og:url" content={domain} />
-        <meta property="og:image" content={`${domain}/public/garden-irrigation-pavers-alameda.jpg`} />
-        <meta property="og:description" content="Professional landscaping services in Oakland, Berkeley, Alameda, and surrounding Bay Area cities." />
+     
 
         {/* JSON-LD Structured Data */}
       <Script
@@ -119,7 +133,7 @@ export default function Home() {
         dangerouslySetInnerHTML={{ __html: JSON.stringify(structuredData) }}
         strategy="afterInteractive"
       />
-      </Head>
+    
     <main className="min-h-screen">
       <Header />
       <Hero />
